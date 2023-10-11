@@ -47,6 +47,8 @@ int main(void)
         diff_1 += time2.tv_nsec - time1.tv_nsec;
         diff_2 += time4.tv_nsec - time3.tv_nsec;
         diff_3 += time6.tv_nsec - time5.tv_nsec;
+
+        sleep(1);
     }
 
     printf("pid1 = %d\n", pid_1);

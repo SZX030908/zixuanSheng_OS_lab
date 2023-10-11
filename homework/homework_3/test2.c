@@ -19,7 +19,7 @@ int main(int argc,char *argv[])
         break;
       }
       else {
-        sleep(1);
+        sleep(3);
 		printf(" I am parent process\n");
       }
     }
