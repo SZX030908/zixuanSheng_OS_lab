@@ -33,7 +33,7 @@ Disassembly of section .text:
     52040038:	ec06                	sd	ra,24(sp)
     5204003a:	e822                	sd	s0,16(sp)
     5204003c:	1000                	addi	s0,sp,32
-    5204003e:	47a9                	li	a5,10
+    5204003e:	47ad                	li	a5,11
     52040040:	fef42423          	sw	a5,-24(s0)
     52040044:	fe042623          	sw	zero,-20(s0)
     52040048:	a235                	j	52040174 <main+0x13e>
