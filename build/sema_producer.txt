@@ -134,7 +134,7 @@ Disassembly of section .text:
     520c0170:	fef42623          	sw	a5,-20(s0)
     520c0174:	fec42783          	lw	a5,-20(s0)
     520c0178:	0007871b          	sext.w	a4,a5
-    520c017c:	4791                	li	a5,4
+    520c017c:	47a5                	li	a5,9
     520c017e:	f8e7d2e3          	bge	a5,a4,520c0102 <main+0x96>
     520c0182:	fe442783          	lw	a5,-28(s0)
     520c0186:	85be                	mv	a1,a5

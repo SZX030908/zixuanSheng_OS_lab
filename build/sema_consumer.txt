@@ -121,7 +121,7 @@ Disassembly of section .text:
     5211014a:	fef42623          	sw	a5,-20(s0)
     5211014e:	fec42783          	lw	a5,-20(s0)
     52110152:	0007871b          	sext.w	a4,a5
-    52110156:	47a5                	li	a5,9
+    52110156:	47b9                	li	a5,14
     52110158:	fae7d8e3          	bge	a5,a4,52110108 <main+0x9c>
     5211015c:	4781                	li	a5,0
     5211015e:	853e                	mv	a0,a5
