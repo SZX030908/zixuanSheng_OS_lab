@@ -8,9 +8,9 @@ Disassembly of section .text:
     52000000:	10401073          	csrw	sie,zero
     52000004:	14401073          	csrw	sip,zero
     52000008:	00012297          	auipc	t0,0x12
-    5200000c:	8f028293          	addi	t0,t0,-1808 # 520118f8 <__DATA_BEGIN__>
+    5200000c:	91828293          	addi	t0,t0,-1768 # 52011920 <__DATA_BEGIN__>
     52000010:	00014317          	auipc	t1,0x14
-    52000014:	62830313          	addi	t1,t1,1576 # 52014638 <__BSS_END__>
+    52000014:	65030313          	addi	t1,t1,1616 # 52014660 <__BSS_END__>
 
 0000000052000018 <head_loop>:
     52000018:	00534663          	blt	t1,t0,52000024 <head_endloop>
@@ -88,7 +88,7 @@ Disassembly of section .text:
     520000ee:	863e                	mv	a2,a5
     520000f0:	85ba                	mv	a1,a4
     520000f2:	54000537          	lui	a0,0x54000
-    520000f6:	610100ef          	jal	ra,52010706 <memcpy>
+    520000f6:	638100ef          	jal	ra,5201072e <memcpy>
     520000fa:	4581                	li	a1,0
     520000fc:	4501                	li	a0,0
     520000fe:	148000ef          	jal	ra,52000246 <deflate_set_memory_allocator>
@@ -263,7 +263,7 @@ Disassembly of section .text:
     520002a8:	078a                	slli	a5,a5,0x2
     520002aa:	ff040713          	addi	a4,s0,-16
     520002ae:	97ba                	add	a5,a5,a4
-    520002b0:	f207a823          	sw	zero,-208(a5) # 53ffff30 <__BSS_END__+0x1feb8f8>
+    520002b0:	f207a823          	sw	zero,-208(a5) # 53ffff30 <__BSS_END__+0x1feb8d0>
     520002b4:	fe442783          	lw	a5,-28(s0)
     520002b8:	2785                	addiw	a5,a5,1
     520002ba:	fef42223          	sw	a5,-28(s0)
@@ -592,7 +592,7 @@ Disassembly of section .text:
     520006b8:	863e                	mv	a2,a5
     520006ba:	85ba                	mv	a1,a4
     520006bc:	8536                	mv	a0,a3
-    520006be:	048100ef          	jal	ra,52010706 <memcpy>
+    520006be:	070100ef          	jal	ra,5201072e <memcpy>
     520006c2:	fd842783          	lw	a5,-40(s0)
     520006c6:	0017979b          	slliw	a5,a5,0x1
     520006ca:	fcf42c23          	sw	a5,-40(s0)
@@ -665,7 +665,7 @@ Disassembly of section .text:
     520007a2:	863e                	mv	a2,a5
     520007a4:	85ba                	mv	a1,a4
     520007a6:	8536                	mv	a0,a3
-    520007a8:	75f0f0ef          	jal	ra,52010706 <memcpy>
+    520007a8:	7870f0ef          	jal	ra,5201072e <memcpy>
     520007ac:	fd842783          	lw	a5,-40(s0)
     520007b0:	0017979b          	slliw	a5,a5,0x1
     520007b4:	fcf42c23          	sw	a5,-40(s0)
@@ -919,7 +919,7 @@ Disassembly of section .text:
     52000ac0:	479d                	li	a5,7
     52000ac2:	471d                	li	a4,7
     52000ac4:	00010697          	auipc	a3,0x10
-    52000ac8:	fac68693          	addi	a3,a3,-84 # 52010a70 <precode_decode_results>
+    52000ac8:	fd468693          	addi	a3,a3,-44 # 52010a98 <precode_decode_results>
     52000acc:	464d                	li	a2,19
     52000ace:	f9eff0ef          	jal	ra,5200026c <build_decode_table>
     52000ad2:	87aa                	mv	a5,a0
@@ -956,7 +956,7 @@ Disassembly of section .text:
     52000b22:	47bd                	li	a5,15
     52000b24:	472d                	li	a4,11
     52000b26:	00010697          	auipc	a3,0x10
-    52000b2a:	f9a68693          	addi	a3,a3,-102 # 52010ac0 <litlen_decode_results>
+    52000b2a:	fc268693          	addi	a3,a3,-62 # 52010ae8 <litlen_decode_results>
     52000b2e:	f3eff0ef          	jal	ra,5200026c <build_decode_table>
     52000b32:	87aa                	mv	a5,a0
     52000b34:	853e                	mv	a0,a5
@@ -993,7 +993,7 @@ Disassembly of section .text:
     52000b86:	47bd                	li	a5,15
     52000b88:	4721                	li	a4,8
     52000b8a:	00010697          	auipc	a3,0x10
-    52000b8e:	3b668693          	addi	a3,a3,950 # 52010f40 <offset_decode_results>
+    52000b8e:	3de68693          	addi	a3,a3,990 # 52010f68 <offset_decode_results>
     52000b92:	edaff0ef          	jal	ra,5200026c <build_decode_table>
     52000b96:	87aa                	mv	a5,a0
     52000b98:	853e                	mv	a0,a5
@@ -1129,7 +1129,7 @@ Disassembly of section .text:
     52000d36:	83c5                	srli	a5,a5,0x11
     52000d38:	0ff7f713          	andi	a4,a5,255
     52000d3c:	00010797          	auipc	a5,0x10
-    52000d40:	28478793          	addi	a5,a5,644 # 52010fc0 <deflate_precode_lens_permutation.1389>
+    52000d40:	2ac78793          	addi	a5,a5,684 # 52010fe8 <deflate_precode_lens_permutation.1389>
     52000d44:	0007c783          	lbu	a5,0(a5)
     52000d48:	2781                	sext.w	a5,a5
     52000d4a:	8b1d                	andi	a4,a4,7
@@ -1186,7 +1186,7 @@ Disassembly of section .text:
     52000df6:	fd843783          	ld	a5,-40(s0)
     52000dfa:	0ff7f713          	andi	a4,a5,255
     52000dfe:	00010697          	auipc	a3,0x10
-    52000e02:	1c268693          	addi	a3,a3,450 # 52010fc0 <deflate_precode_lens_permutation.1389>
+    52000e02:	1ea68693          	addi	a3,a3,490 # 52010fe8 <deflate_precode_lens_permutation.1389>
     52000e06:	fcc46783          	lwu	a5,-52(s0)
     52000e0a:	97b6                	add	a5,a5,a3
     52000e0c:	0007c783          	lbu	a5,0(a5)
@@ -1212,7 +1212,7 @@ Disassembly of section .text:
     52000e4c:	faf765e3          	bltu	a4,a5,52000df6 <deflate_decompress_default+0x254>
     52000e50:	a02d                	j	52000e7a <deflate_decompress_default+0x2d8>
     52000e52:	00010717          	auipc	a4,0x10
-    52000e56:	16e70713          	addi	a4,a4,366 # 52010fc0 <deflate_precode_lens_permutation.1389>
+    52000e56:	19670713          	addi	a4,a4,406 # 52010fe8 <deflate_precode_lens_permutation.1389>
     52000e5a:	fcc46783          	lwu	a5,-52(s0)
     52000e5e:	97ba                	add	a5,a5,a4
     52000e60:	0007c783          	lbu	a5,0(a5)
@@ -1519,7 +1519,7 @@ Disassembly of section .text:
     52001208:	863e                	mv	a2,a5
     5200120a:	4581                	li	a1,0
     5200120c:	853a                	mv	a0,a4
-    5200120e:	54a0f0ef          	jal	ra,52010758 <memset>
+    5200120e:	5720f0ef          	jal	ra,52010780 <memset>
     52001212:	fcc42703          	lw	a4,-52(s0)
     52001216:	f5842783          	lw	a5,-168(s0)
     5200121a:	9fb9                	addw	a5,a5,a4
@@ -1665,7 +1665,7 @@ Disassembly of section .text:
     520013f2:	863e                	mv	a2,a5
     520013f4:	85ba                	mv	a1,a4
     520013f6:	8536                	mv	a0,a3
-    520013f8:	30e0f0ef          	jal	ra,52010706 <memcpy>
+    520013f8:	3360f0ef          	jal	ra,5201072e <memcpy>
     520013fc:	fb645783          	lhu	a5,-74(s0)
     52001400:	fe043703          	ld	a4,-32(s0)
     52001404:	97ba                	add	a5,a5,a4
@@ -2722,7 +2722,7 @@ Disassembly of section .text:
     520021a4:	4781                	li	a5,0
     520021a6:	a8a1                	j	520021fe <libdeflate_alloc_decompressor_ex+0x72>
     520021a8:	0000f797          	auipc	a5,0xf
-    520021ac:	76078793          	addi	a5,a5,1888 # 52011908 <global_decompressor>
+    520021ac:	78878793          	addi	a5,a5,1928 # 52011930 <global_decompressor>
     520021b0:	fef43423          	sd	a5,-24(s0)
     520021b4:	fe843783          	ld	a5,-24(s0)
     520021b8:	e399                	bnez	a5,520021be <libdeflate_alloc_decompressor_ex+0x32>
@@ -2735,7 +2735,7 @@ Disassembly of section .text:
     520021ca:	863e                	mv	a2,a5
     520021cc:	4581                	li	a1,0
     520021ce:	853a                	mv	a0,a4
-    520021d0:	5880e0ef          	jal	ra,52010758 <memset>
+    520021d0:	5b00e0ef          	jal	ra,52010780 <memset>
     520021d4:	fd843783          	ld	a5,-40(s0)
     520021d8:	6b9c                	ld	a5,16(a5)
     520021da:	c789                	beqz	a5,520021e4 <libdeflate_alloc_decompressor_ex+0x58>
@@ -2743,7 +2743,7 @@ Disassembly of section .text:
     520021e0:	6b9c                	ld	a5,16(a5)
     520021e2:	a031                	j	520021ee <libdeflate_alloc_decompressor_ex+0x62>
     520021e4:	0000f797          	auipc	a5,0xf
-    520021e8:	71c78793          	addi	a5,a5,1820 # 52011900 <libdeflate_default_free_func>
+    520021e8:	74478793          	addi	a5,a5,1860 # 52011928 <libdeflate_default_free_func>
     520021ec:	639c                	ld	a5,0(a5)
     520021ee:	fe843683          	ld	a3,-24(s0)
     520021f2:	670d                	lui	a4,0x3
@@ -2762,7 +2762,7 @@ Disassembly of section .text:
     5200220c:	e022                	sd	s0,0(sp)
     5200220e:	0800                	addi	s0,sp,16
     52002210:	0000f517          	auipc	a0,0xf
-    52002214:	dc850513          	addi	a0,a0,-568 # 52010fd8 <defaults.1529>
+    52002214:	df050513          	addi	a0,a0,-528 # 52011000 <defaults.1529>
     52002218:	f75ff0ef          	jal	ra,5200218c <libdeflate_alloc_decompressor_ex>
     5200221c:	87aa                	mv	a5,a0
     5200221e:	853e                	mv	a0,a5
@@ -2959,7 +2959,7 @@ Disassembly of section .text:
     52002426:	8082                	ret
 
 0000000052002428 <sort_symbols>:
-    52002428:	b3010113          	addi	sp,sp,-1232 # 530ffb30 <__BSS_END__+0x10eb4f8>
+    52002428:	b3010113          	addi	sp,sp,-1232 # 530ffb30 <__BSS_END__+0x10eb4d0>
     5200242c:	4c113423          	sd	ra,1224(sp)
     52002430:	4c813023          	sd	s0,1216(sp)
     52002434:	4d010413          	addi	s0,sp,1232
@@ -2976,7 +2976,7 @@ Disassembly of section .text:
     5200245c:	863e                	mv	a2,a5
     5200245e:	4581                	li	a1,0
     52002460:	853a                	mv	a0,a4
-    52002462:	2f60e0ef          	jal	ra,52010758 <memset>
+    52002462:	31e0e0ef          	jal	ra,52010780 <memset>
     52002466:	fe042623          	sw	zero,-20(s0)
     5200246a:	a085                	j	520024ca <sort_symbols+0xa2>
     5200246c:	fec46783          	lwu	a5,-20(s0)
@@ -3646,7 +3646,7 @@ Disassembly of section .text:
     52002c08:	0ff7f793          	andi	a5,a5,255
     52002c0c:	2781                	sext.w	a5,a5
     52002c0e:	0000f697          	auipc	a3,0xf
-    52002c12:	84a68693          	addi	a3,a3,-1974 # 52011458 <bitreverse_tab>
+    52002c12:	87268693          	addi	a3,a3,-1934 # 52011480 <bitreverse_tab>
     52002c16:	1782                	slli	a5,a5,0x20
     52002c18:	9381                	srli	a5,a5,0x20
     52002c1a:	97b6                	add	a5,a5,a3
@@ -3658,7 +3658,7 @@ Disassembly of section .text:
     52002c2e:	0087d79b          	srliw	a5,a5,0x8
     52002c32:	2781                	sext.w	a5,a5
     52002c34:	0000f697          	auipc	a3,0xf
-    52002c38:	82468693          	addi	a3,a3,-2012 # 52011458 <bitreverse_tab>
+    52002c38:	84c68693          	addi	a3,a3,-1972 # 52011480 <bitreverse_tab>
     52002c3c:	1782                	slli	a5,a5,0x20
     52002c3e:	9381                	srli	a5,a5,0x20
     52002c40:	97b6                	add	a5,a5,a3
@@ -3795,7 +3795,7 @@ Disassembly of section .text:
     52002dc0:	863e                	mv	a2,a5
     52002dc2:	4581                	li	a1,0
     52002dc4:	853a                	mv	a0,a4
-    52002dc6:	1930d0ef          	jal	ra,52010758 <memset>
+    52002dc6:	1bb0d0ef          	jal	ra,52010780 <memset>
     52002dca:	0001                	nop
     52002dcc:	60e2                	ld	ra,24(sp)
     52002dce:	6442                	ld	s0,16(sp)
@@ -3947,7 +3947,7 @@ Disassembly of section .text:
     52002f72:	863e                	mv	a2,a5
     52002f74:	4581                	li	a1,0
     52002f76:	853a                	mv	a0,a4
-    52002f78:	7e00d0ef          	jal	ra,52010758 <memset>
+    52002f78:	0090d0ef          	jal	ra,52010780 <memset>
     52002f7c:	fb043783          	ld	a5,-80(s0)
     52002f80:	fef43423          	sd	a5,-24(s0)
     52002f84:	fe042223          	sw	zero,-28(s0)
@@ -4336,7 +4336,7 @@ Disassembly of section .text:
     52003404:	37fd                	addiw	a5,a5,-1
     52003406:	2781                	sext.w	a5,a5
     52003408:	0000e717          	auipc	a4,0xe
-    5200340c:	02070713          	addi	a4,a4,32 # 52011428 <deflate_precode_lens_permutation>
+    5200340c:	04870713          	addi	a4,a4,72 # 52011450 <deflate_precode_lens_permutation>
     52003410:	1782                	slli	a5,a5,0x20
     52003412:	9381                	srli	a5,a5,0x20
     52003414:	97ba                	add	a5,a5,a4
@@ -4415,7 +4415,7 @@ Disassembly of section .text:
     520034da:	fef42623          	sw	a5,-20(s0)
     520034de:	a0e1                	j	520035a6 <deflate_compute_full_len_codewords+0xdc>
     520034e0:	0000e717          	auipc	a4,0xe
-    520034e4:	c4070713          	addi	a4,a4,-960 # 52011120 <deflate_length_slot>
+    520034e4:	c6870713          	addi	a4,a4,-920 # 52011148 <deflate_length_slot>
     520034e8:	fec46783          	lwu	a5,-20(s0)
     520034ec:	97ba                	add	a5,a5,a4
     520034ee:	0007c783          	lbu	a5,0(a5)
@@ -4424,7 +4424,7 @@ Disassembly of section .text:
     520034fa:	1017879b          	addiw	a5,a5,257
     520034fe:	fef42223          	sw	a5,-28(s0)
     52003502:	0000e717          	auipc	a4,0xe
-    52003506:	aee70713          	addi	a4,a4,-1298 # 52010ff0 <deflate_length_slot_base>
+    52003506:	b1670713          	addi	a4,a4,-1258 # 52011018 <deflate_length_slot_base>
     5200350a:	fe846783          	lwu	a5,-24(s0)
     5200350e:	078a                	slli	a5,a5,0x2
     52003510:	97ba                	add	a5,a5,a4
@@ -4460,7 +4460,7 @@ Disassembly of section .text:
     5200356c:	97ba                	add	a5,a5,a4
     5200356e:	5007c703          	lbu	a4,1280(a5)
     52003572:	0000e697          	auipc	a3,0xe
-    52003576:	af668693          	addi	a3,a3,-1290 # 52011068 <deflate_extra_length_bits>
+    52003576:	b1e68693          	addi	a3,a3,-1250 # 52011090 <deflate_extra_length_bits>
     5200357a:	fe846783          	lwu	a5,-24(s0)
     5200357e:	97b6                	add	a5,a5,a3
     52003580:	0007c783          	lbu	a5,0(a5)
@@ -4544,7 +4544,7 @@ Disassembly of section .text:
     5200366e:	fc042223          	sw	zero,-60(s0)
     52003672:	a085                	j	520036d2 <deflate_flush_block+0x112>
     52003674:	0000e717          	auipc	a4,0xe
-    52003678:	dcc70713          	addi	a4,a4,-564 # 52011440 <deflate_extra_precode_bits>
+    52003678:	df470713          	addi	a4,a4,-524 # 52011468 <deflate_extra_precode_bits>
     5200367c:	fc446783          	lwu	a5,-60(s0)
     52003680:	97ba                	add	a5,a5,a4
     52003682:	0007c783          	lbu	a5,0(a5)
@@ -4673,7 +4673,7 @@ Disassembly of section .text:
     520037fa:	eff7879b          	addiw	a5,a5,-257
     520037fe:	2781                	sext.w	a5,a5
     52003800:	0000e717          	auipc	a4,0xe
-    52003804:	86870713          	addi	a4,a4,-1944 # 52011068 <deflate_extra_length_bits>
+    52003804:	89070713          	addi	a4,a4,-1904 # 52011090 <deflate_extra_length_bits>
     52003808:	1782                	slli	a5,a5,0x20
     5200380a:	9381                	srli	a5,a5,0x20
     5200380c:	97ba                	add	a5,a5,a4
@@ -4731,7 +4731,7 @@ Disassembly of section .text:
     520038a8:	fc042223          	sw	zero,-60(s0)
     520038ac:	a069                	j	52003936 <deflate_flush_block+0x376>
     520038ae:	0000e717          	auipc	a4,0xe
-    520038b2:	85270713          	addi	a4,a4,-1966 # 52011100 <deflate_extra_offset_bits>
+    520038b2:	87a70713          	addi	a4,a4,-1926 # 52011128 <deflate_extra_offset_bits>
     520038b6:	fc446783          	lwu	a5,-60(s0)
     520038ba:	97ba                	add	a5,a5,a4
     520038bc:	0007c783          	lbu	a5,0(a5)
@@ -4943,7 +4943,7 @@ Disassembly of section .text:
     52003b4c:	4785                	li	a5,1
     52003b4e:	fcf42e23          	sw	a5,-36(s0)
     52003b52:	0000e717          	auipc	a4,0xe
-    52003b56:	8d670713          	addi	a4,a4,-1834 # 52011428 <deflate_precode_lens_permutation>
+    52003b56:	8fe70713          	addi	a4,a4,-1794 # 52011450 <deflate_precode_lens_permutation>
     52003b5a:	fdc46783          	lwu	a5,-36(s0)
     52003b5e:	97ba                	add	a5,a5,a4
     52003b60:	0007c783          	lbu	a5,0(a5)
@@ -5037,7 +5037,7 @@ Disassembly of section .text:
     52003c84:	8fd9                	or	a5,a5,a4
     52003c86:	f8f43823          	sd	a5,-112(s0)
     52003c8a:	0000d717          	auipc	a4,0xd
-    52003c8e:	7b670713          	addi	a4,a4,1974 # 52011440 <deflate_extra_precode_bits>
+    52003c8e:	7de70713          	addi	a4,a4,2014 # 52011468 <deflate_extra_precode_bits>
     52003c92:	f6846783          	lwu	a5,-152(s0)
     52003c96:	97ba                	add	a5,a5,a4
     52003c98:	0007c783          	lbu	a5,0(a5)
@@ -5237,7 +5237,7 @@ Disassembly of section .text:
     52003f30:	863e                	mv	a2,a5
     52003f32:	85b6                	mv	a1,a3
     52003f34:	853a                	mv	a0,a4
-    52003f36:	7d00c0ef          	jal	ra,52010706 <memcpy>
+    52003f36:	7f80c0ef          	jal	ra,5201072e <memcpy>
     52003f3a:	fa043703          	ld	a4,-96(s0)
     52003f3e:	fd043783          	ld	a5,-48(s0)
     52003f42:	97ba                	add	a5,a5,a4
@@ -5383,7 +5383,7 @@ Disassembly of section .text:
     5200411a:	9fb9                	addw	a5,a5,a4
     5200411c:	f8f42e23          	sw	a5,-100(s0)
     52004120:	0000d717          	auipc	a4,0xd
-    52004124:	f6870713          	addi	a4,a4,-152 # 52011088 <deflate_offset_slot_base>
+    52004124:	f9070713          	addi	a4,a4,-112 # 520110b0 <deflate_offset_slot_base>
     52004128:	f0c46783          	lwu	a5,-244(s0)
     5200412c:	078a                	slli	a5,a5,0x2
     5200412e:	97ba                	add	a5,a5,a4
@@ -5399,7 +5399,7 @@ Disassembly of section .text:
     5200414e:	8fd9                	or	a5,a5,a4
     52004150:	f8f43823          	sd	a5,-112(s0)
     52004154:	0000d717          	auipc	a4,0xd
-    52004158:	fac70713          	addi	a4,a4,-84 # 52011100 <deflate_extra_offset_bits>
+    52004158:	fd470713          	addi	a4,a4,-44 # 52011128 <deflate_extra_offset_bits>
     5200415c:	f0c46783          	lwu	a5,-244(s0)
     52004160:	97ba                	add	a5,a5,a4
     52004162:	0007c783          	lbu	a5,0(a5)
@@ -5747,7 +5747,7 @@ Disassembly of section .text:
     520045ea:	9fb9                	addw	a5,a5,a4
     520045ec:	f8f42e23          	sw	a5,-100(s0)
     520045f0:	0000d717          	auipc	a4,0xd
-    520045f4:	a9870713          	addi	a4,a4,-1384 # 52011088 <deflate_offset_slot_base>
+    520045f4:	ac070713          	addi	a4,a4,-1344 # 520110b0 <deflate_offset_slot_base>
     520045f8:	f3c46783          	lwu	a5,-196(s0)
     520045fc:	078a                	slli	a5,a5,0x2
     520045fe:	97ba                	add	a5,a5,a4
@@ -5763,7 +5763,7 @@ Disassembly of section .text:
     5200461e:	8fd9                	or	a5,a5,a4
     52004620:	f8f43823          	sd	a5,-112(s0)
     52004624:	0000d717          	auipc	a4,0xd
-    52004628:	adc70713          	addi	a4,a4,-1316 # 52011100 <deflate_extra_offset_bits>
+    52004628:	b0470713          	addi	a4,a4,-1276 # 52011128 <deflate_extra_offset_bits>
     5200462c:	f3c46783          	lwu	a5,-196(s0)
     52004630:	97ba                	add	a5,a5,a4
     52004632:	0007c783          	lbu	a5,0(a5)
@@ -6153,7 +6153,7 @@ Disassembly of section .text:
     52004aba:	478d                	li	a5,3
     52004abc:	a059                	j	52004b42 <choose_min_match_len+0xac>
     52004abe:	0000d717          	auipc	a4,0xd
-    52004ac2:	dd270713          	addi	a4,a4,-558 # 52011890 <min_lens.1979>
+    52004ac2:	dfa70713          	addi	a4,a4,-518 # 520118b8 <min_lens.1979>
     52004ac6:	fdc46783          	lwu	a5,-36(s0)
     52004aca:	97ba                	add	a5,a5,a4
     52004acc:	0007c783          	lbu	a5,0(a5)
@@ -6211,7 +6211,7 @@ Disassembly of section .text:
     52004b6c:	863a                	mv	a2,a4
     52004b6e:	4581                	li	a1,0
     52004b70:	853e                	mv	a0,a5
-    52004b72:	3e70b0ef          	jal	ra,52010758 <memset>
+    52004b72:	40f0b0ef          	jal	ra,52010780 <memset>
     52004b76:	fe042623          	sw	zero,-20(s0)
     52004b7a:	ed043783          	ld	a5,-304(s0)
     52004b7e:	6705                	lui	a4,0x1
@@ -6369,7 +6369,7 @@ Disassembly of section .text:
     52004d54:	fbc42783          	lw	a5,-68(s0)
     52004d58:	0ff7f713          	andi	a4,a5,255
     52004d5c:	fb043783          	ld	a5,-80(s0)
-    52004d60:	00e78023          	sb	a4,0(a5) # ffffffffffff0000 <__BSS_END__+0xffffffffadfdb9c8>
+    52004d60:	00e78023          	sb	a4,0(a5) # ffffffffffff0000 <__BSS_END__+0xffffffffadfdb9a0>
     52004d64:	fbc42783          	lw	a5,-68(s0)
     52004d68:	0087d79b          	srliw	a5,a5,0x8
     52004d6c:	0007871b          	sext.w	a4,a5
@@ -6477,7 +6477,7 @@ Disassembly of section .text:
     52004ec8:	863e                	mv	a2,a5
     52004eca:	85b6                	mv	a1,a3
     52004ecc:	853a                	mv	a0,a4
-    52004ece:	0390b0ef          	jal	ra,52010706 <memcpy>
+    52004ece:	0610b0ef          	jal	ra,5201072e <memcpy>
     52004ed2:	fe043703          	ld	a4,-32(s0)
     52004ed6:	fd043783          	ld	a5,-48(s0)
     52004eda:	97ba                	add	a5,a5,a4
@@ -6777,7 +6777,7 @@ Disassembly of section .text:
     520052b0:	eef43023          	sd	a5,-288(s0)
     520052b4:	ee043783          	ld	a5,-288(s0)
     520052b8:	078d                	addi	a5,a5,3
-    520052ba:	0007c783          	lbu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    520052ba:	0007c783          	lbu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     520052be:	2781                	sext.w	a5,a5
     520052c0:	0187979b          	slliw	a5,a5,0x18
     520052c4:	0007871b          	sext.w	a4,a5
@@ -6825,7 +6825,7 @@ Disassembly of section .text:
     52005346:	ecf43823          	sd	a5,-304(s0)
     5200534a:	d3440793          	addi	a5,s0,-716
     5200534e:	ed043703          	ld	a4,-304(s0)
-    52005352:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52005352:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     52005356:	00174603          	lbu	a2,1(a4)
     5200535a:	00274683          	lbu	a3,2(a4)
     5200535e:	00374703          	lbu	a4,3(a4)
@@ -7124,7 +7124,7 @@ Disassembly of section .text:
     52005754:	639c                	ld	a5,0(a5)
     52005756:	daf43823          	sd	a5,-592(s0)
     5200575a:	0000c717          	auipc	a4,0xc
-    5200575e:	9c670713          	addi	a4,a4,-1594 # 52011120 <deflate_length_slot>
+    5200575e:	9ee70713          	addi	a4,a4,-1554 # 52011148 <deflate_length_slot>
     52005762:	dcc46783          	lwu	a5,-564(s0)
     52005766:	97ba                	add	a5,a5,a4
     52005768:	0007c783          	lbu	a5,0(a5)
@@ -7136,7 +7136,7 @@ Disassembly of section .text:
     52005780:	10000793          	li	a5,256
     52005784:	00e7ed63          	bltu	a5,a4,5200579e <deflate_compress_fastest+0x88e>
     52005788:	0000c717          	auipc	a4,0xc
-    5200578c:	aa070713          	addi	a4,a4,-1376 # 52011228 <deflate_offset_slot>
+    5200578c:	ac870713          	addi	a4,a4,-1336 # 52011250 <deflate_offset_slot>
     52005790:	da846783          	lwu	a5,-600(s0)
     52005794:	97ba                	add	a5,a5,a4
     52005796:	0007c783          	lbu	a5,0(a5)
@@ -7150,7 +7150,7 @@ Disassembly of section .text:
     520057ac:	1007879b          	addiw	a5,a5,256
     520057b0:	2781                	sext.w	a5,a5
     520057b2:	0000c717          	auipc	a4,0xc
-    520057b6:	a7670713          	addi	a4,a4,-1418 # 52011228 <deflate_offset_slot>
+    520057b6:	a9e70713          	addi	a4,a4,-1378 # 52011250 <deflate_offset_slot>
     520057ba:	1782                	slli	a5,a5,0x20
     520057bc:	9381                	srli	a5,a5,0x20
     520057be:	97ba                	add	a5,a5,a4
@@ -7361,7 +7361,7 @@ Disassembly of section .text:
     52005a4e:	97b6                	add	a5,a5,a3
     52005a50:	0786                	slli	a5,a5,0x1
     52005a52:	97ba                	add	a5,a5,a4
-    52005a54:	00079703          	lh	a4,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52005a54:	00079703          	lh	a4,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     52005a58:	e3843683          	ld	a3,-456(s0)
     52005a5c:	de842783          	lw	a5,-536(s0)
     52005a60:	dec46603          	lwu	a2,-532(s0)
@@ -7806,7 +7806,7 @@ Disassembly of section .text:
     52006020:	f1846783          	lwu	a5,-232(s0)
     52006024:	0786                	slli	a5,a5,0x1
     52006026:	97ba                	add	a5,a5,a4
-    52006028:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52006028:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200602c:	f0f41923          	sh	a5,-238(s0)
     52006030:	f8043703          	ld	a4,-128(s0)
     52006034:	f1446683          	lwu	a3,-236(s0)
@@ -7929,7 +7929,7 @@ Disassembly of section .text:
     520061a6:	eef43423          	sd	a5,-280(s0)
     520061aa:	d1440793          	addi	a5,s0,-748
     520061ae:	ee843703          	ld	a4,-280(s0)
-    520061b2:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    520061b2:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     520061b6:	00174603          	lbu	a2,1(a4)
     520061ba:	00274683          	lbu	a3,2(a4)
     520061be:	00374703          	lbu	a4,3(a4)
@@ -8272,7 +8272,7 @@ Disassembly of section .text:
     520065f4:	639c                	ld	a5,0(a5)
     520065f6:	dcf43423          	sd	a5,-568(s0)
     520065fa:	0000b717          	auipc	a4,0xb
-    520065fe:	b2670713          	addi	a4,a4,-1242 # 52011120 <deflate_length_slot>
+    520065fe:	b4e70713          	addi	a4,a4,-1202 # 52011148 <deflate_length_slot>
     52006602:	de446783          	lwu	a5,-540(s0)
     52006606:	97ba                	add	a5,a5,a4
     52006608:	0007c783          	lbu	a5,0(a5) # 1000 <TEXT_START-0x51fff000>
@@ -8284,7 +8284,7 @@ Disassembly of section .text:
     52006620:	10000793          	li	a5,256
     52006624:	00e7ed63          	bltu	a5,a4,5200663e <deflate_compress_greedy+0x968>
     52006628:	0000b717          	auipc	a4,0xb
-    5200662c:	c0070713          	addi	a4,a4,-1024 # 52011228 <deflate_offset_slot>
+    5200662c:	c2870713          	addi	a4,a4,-984 # 52011250 <deflate_offset_slot>
     52006630:	dc046783          	lwu	a5,-576(s0)
     52006634:	97ba                	add	a5,a5,a4
     52006636:	0007c783          	lbu	a5,0(a5)
@@ -8298,7 +8298,7 @@ Disassembly of section .text:
     5200664c:	1007879b          	addiw	a5,a5,256
     52006650:	2781                	sext.w	a5,a5
     52006652:	0000b717          	auipc	a4,0xb
-    52006656:	bd670713          	addi	a4,a4,-1066 # 52011228 <deflate_offset_slot>
+    52006656:	bfe70713          	addi	a4,a4,-1026 # 52011250 <deflate_offset_slot>
     5200665a:	1782                	slli	a5,a5,0x20
     5200665c:	9381                	srli	a5,a5,0x20
     5200665e:	97ba                	add	a5,a5,a4
@@ -9072,7 +9072,7 @@ Disassembly of section .text:
     52007060:	ed046783          	lwu	a5,-304(s0)
     52007064:	0786                	slli	a5,a5,0x1
     52007066:	97ba                	add	a5,a5,a4
-    52007068:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52007068:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200706c:	ecf41523          	sh	a5,-310(s0)
     52007070:	f3843703          	ld	a4,-200(s0)
     52007074:	ecc46683          	lwu	a3,-308(s0)
@@ -9195,7 +9195,7 @@ Disassembly of section .text:
     520071e6:	eaf43023          	sd	a5,-352(s0)
     520071ea:	87840793          	addi	a5,s0,-1928
     520071ee:	ea043703          	ld	a4,-352(s0)
-    520071f2:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    520071f2:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     520071f6:	00174603          	lbu	a2,1(a4)
     520071fa:	00274683          	lbu	a3,2(a4)
     520071fe:	00374703          	lbu	a4,3(a4)
@@ -9617,7 +9617,7 @@ Disassembly of section .text:
     5200772a:	639c                	ld	a5,0(a5)
     5200772c:	def43423          	sd	a5,-536(s0)
     52007730:	0000a717          	auipc	a4,0xa
-    52007734:	9f070713          	addi	a4,a4,-1552 # 52011120 <deflate_length_slot>
+    52007734:	a1870713          	addi	a4,a4,-1512 # 52011148 <deflate_length_slot>
     52007738:	e0446783          	lwu	a5,-508(s0)
     5200773c:	97ba                	add	a5,a5,a4
     5200773e:	0007c783          	lbu	a5,0(a5)
@@ -9629,7 +9629,7 @@ Disassembly of section .text:
     52007756:	10000793          	li	a5,256
     5200775a:	00e7ed63          	bltu	a5,a4,52007774 <deflate_compress_lazy+0xafe>
     5200775e:	0000a717          	auipc	a4,0xa
-    52007762:	aca70713          	addi	a4,a4,-1334 # 52011228 <deflate_offset_slot>
+    52007762:	af270713          	addi	a4,a4,-1294 # 52011250 <deflate_offset_slot>
     52007766:	de046783          	lwu	a5,-544(s0)
     5200776a:	97ba                	add	a5,a5,a4
     5200776c:	0007c783          	lbu	a5,0(a5)
@@ -9643,7 +9643,7 @@ Disassembly of section .text:
     52007782:	1007879b          	addiw	a5,a5,256
     52007786:	2781                	sext.w	a5,a5
     52007788:	0000a717          	auipc	a4,0xa
-    5200778c:	aa070713          	addi	a4,a4,-1376 # 52011228 <deflate_offset_slot>
+    5200778c:	ac870713          	addi	a4,a4,-1336 # 52011250 <deflate_offset_slot>
     52007790:	1782                	slli	a5,a5,0x20
     52007792:	9381                	srli	a5,a5,0x20
     52007794:	97ba                	add	a5,a5,a4
@@ -10106,7 +10106,7 @@ Disassembly of section .text:
     52007d76:	cc846783          	lwu	a5,-824(s0)
     52007d7a:	0786                	slli	a5,a5,0x1
     52007d7c:	97ba                	add	a5,a5,a4
-    52007d7e:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52007d7e:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     52007d82:	ccf41123          	sh	a5,-830(s0)
     52007d86:	d3043703          	ld	a4,-720(s0)
     52007d8a:	cc446683          	lwu	a3,-828(s0)
@@ -10229,7 +10229,7 @@ Disassembly of section .text:
     52007efc:	c8f43c23          	sd	a5,-872(s0)
     52007f00:	88040793          	addi	a5,s0,-1920
     52007f04:	c9843703          	ld	a4,-872(s0)
-    52007f08:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52007f08:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     52007f0c:	00174603          	lbu	a2,1(a4)
     52007f10:	00274683          	lbu	a3,2(a4)
     52007f14:	00374703          	lbu	a4,3(a4)
@@ -10818,7 +10818,7 @@ Disassembly of section .text:
     52008674:	b7046783          	lwu	a5,-1168(s0)
     52008678:	0786                	slli	a5,a5,0x1
     5200867a:	97ba                	add	a5,a5,a4
-    5200867c:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    5200867c:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     52008680:	b6f41523          	sh	a5,-1174(s0)
     52008684:	bd843703          	ld	a4,-1064(s0)
     52008688:	b6c46683          	lwu	a3,-1172(s0)
@@ -10941,7 +10941,7 @@ Disassembly of section .text:
     520087fa:	b4f43023          	sd	a5,-1216(s0)
     520087fe:	88840793          	addi	a5,s0,-1912
     52008802:	b4043703          	ld	a4,-1216(s0)
-    52008806:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52008806:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200880a:	00174603          	lbu	a2,1(a4)
     5200880e:	00274683          	lbu	a3,2(a4)
     52008812:	00374703          	lbu	a4,3(a4)
@@ -11469,7 +11469,7 @@ Disassembly of section .text:
     52008e82:	639c                	ld	a5,0(a5)
     52008e84:	a4f43823          	sd	a5,-1456(s0)
     52008e88:	00008717          	auipc	a4,0x8
-    52008e8c:	29870713          	addi	a4,a4,664 # 52011120 <deflate_length_slot>
+    52008e8c:	2c070713          	addi	a4,a4,704 # 52011148 <deflate_length_slot>
     52008e90:	a6c46783          	lwu	a5,-1428(s0)
     52008e94:	97ba                	add	a5,a5,a4
     52008e96:	0007c783          	lbu	a5,0(a5)
@@ -11481,7 +11481,7 @@ Disassembly of section .text:
     52008eae:	10000793          	li	a5,256
     52008eb2:	00e7ed63          	bltu	a5,a4,52008ecc <deflate_compress_lazy+0x2256>
     52008eb6:	00008717          	auipc	a4,0x8
-    52008eba:	37270713          	addi	a4,a4,882 # 52011228 <deflate_offset_slot>
+    52008eba:	39a70713          	addi	a4,a4,922 # 52011250 <deflate_offset_slot>
     52008ebe:	a4846783          	lwu	a5,-1464(s0)
     52008ec2:	97ba                	add	a5,a5,a4
     52008ec4:	0007c783          	lbu	a5,0(a5)
@@ -11495,7 +11495,7 @@ Disassembly of section .text:
     52008eda:	1007879b          	addiw	a5,a5,256
     52008ede:	2781                	sext.w	a5,a5
     52008ee0:	00008717          	auipc	a4,0x8
-    52008ee4:	34870713          	addi	a4,a4,840 # 52011228 <deflate_offset_slot>
+    52008ee4:	37070713          	addi	a4,a4,880 # 52011250 <deflate_offset_slot>
     52008ee8:	1782                	slli	a5,a5,0x20
     52008eea:	9381                	srli	a5,a5,0x20
     52008eec:	97ba                	add	a5,a5,a4
@@ -11834,7 +11834,7 @@ Disassembly of section .text:
     52009322:	639c                	ld	a5,0(a5)
     52009324:	98f43823          	sd	a5,-1648(s0)
     52009328:	00008717          	auipc	a4,0x8
-    5200932c:	df870713          	addi	a4,a4,-520 # 52011120 <deflate_length_slot>
+    5200932c:	e2070713          	addi	a4,a4,-480 # 52011148 <deflate_length_slot>
     52009330:	9ac46783          	lwu	a5,-1620(s0)
     52009334:	97ba                	add	a5,a5,a4
     52009336:	0007c783          	lbu	a5,0(a5) # 1e35a000 <TEXT_START-0x33ca6000>
@@ -11846,7 +11846,7 @@ Disassembly of section .text:
     5200934e:	10000793          	li	a5,256
     52009352:	00e7ed63          	bltu	a5,a4,5200936c <deflate_compress_lazy+0x26f6>
     52009356:	00008717          	auipc	a4,0x8
-    5200935a:	ed270713          	addi	a4,a4,-302 # 52011228 <deflate_offset_slot>
+    5200935a:	efa70713          	addi	a4,a4,-262 # 52011250 <deflate_offset_slot>
     5200935e:	98846783          	lwu	a5,-1656(s0)
     52009362:	97ba                	add	a5,a5,a4
     52009364:	0007c783          	lbu	a5,0(a5)
@@ -11860,7 +11860,7 @@ Disassembly of section .text:
     5200937a:	1007879b          	addiw	a5,a5,256
     5200937e:	2781                	sext.w	a5,a5
     52009380:	00008717          	auipc	a4,0x8
-    52009384:	ea870713          	addi	a4,a4,-344 # 52011228 <deflate_offset_slot>
+    52009384:	ed070713          	addi	a4,a4,-304 # 52011250 <deflate_offset_slot>
     52009388:	1782                	slli	a5,a5,0x20
     5200938a:	9381                	srli	a5,a5,0x20
     5200938c:	97ba                	add	a5,a5,a4
@@ -12568,7 +12568,7 @@ Disassembly of section .text:
     52009cbc:	ed046783          	lwu	a5,-304(s0)
     52009cc0:	0786                	slli	a5,a5,0x1
     52009cc2:	97ba                	add	a5,a5,a4
-    52009cc4:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52009cc4:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     52009cc8:	ecf41523          	sh	a5,-310(s0)
     52009ccc:	f3843703          	ld	a4,-200(s0)
     52009cd0:	ecc46683          	lwu	a3,-308(s0)
@@ -12691,7 +12691,7 @@ Disassembly of section .text:
     52009e42:	eaf43023          	sd	a5,-352(s0)
     52009e46:	87840793          	addi	a5,s0,-1928
     52009e4a:	ea043703          	ld	a4,-352(s0)
-    52009e4e:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    52009e4e:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     52009e52:	00174603          	lbu	a2,1(a4)
     52009e56:	00274683          	lbu	a3,2(a4)
     52009e5a:	00374703          	lbu	a4,3(a4)
@@ -13113,7 +13113,7 @@ Disassembly of section .text:
     5200a386:	639c                	ld	a5,0(a5)
     5200a388:	def43423          	sd	a5,-536(s0)
     5200a38c:	00007717          	auipc	a4,0x7
-    5200a390:	d9470713          	addi	a4,a4,-620 # 52011120 <deflate_length_slot>
+    5200a390:	dbc70713          	addi	a4,a4,-580 # 52011148 <deflate_length_slot>
     5200a394:	e0446783          	lwu	a5,-508(s0)
     5200a398:	97ba                	add	a5,a5,a4
     5200a39a:	0007c783          	lbu	a5,0(a5)
@@ -13125,7 +13125,7 @@ Disassembly of section .text:
     5200a3b2:	10000793          	li	a5,256
     5200a3b6:	00e7ed63          	bltu	a5,a4,5200a3d0 <deflate_compress_lazy2+0xb00>
     5200a3ba:	00007717          	auipc	a4,0x7
-    5200a3be:	e6e70713          	addi	a4,a4,-402 # 52011228 <deflate_offset_slot>
+    5200a3be:	e9670713          	addi	a4,a4,-362 # 52011250 <deflate_offset_slot>
     5200a3c2:	de046783          	lwu	a5,-544(s0)
     5200a3c6:	97ba                	add	a5,a5,a4
     5200a3c8:	0007c783          	lbu	a5,0(a5)
@@ -13139,7 +13139,7 @@ Disassembly of section .text:
     5200a3de:	1007879b          	addiw	a5,a5,256
     5200a3e2:	2781                	sext.w	a5,a5
     5200a3e4:	00007717          	auipc	a4,0x7
-    5200a3e8:	e4470713          	addi	a4,a4,-444 # 52011228 <deflate_offset_slot>
+    5200a3e8:	e6c70713          	addi	a4,a4,-404 # 52011250 <deflate_offset_slot>
     5200a3ec:	1782                	slli	a5,a5,0x20
     5200a3ee:	9381                	srli	a5,a5,0x20
     5200a3f0:	97ba                	add	a5,a5,a4
@@ -13602,7 +13602,7 @@ Disassembly of section .text:
     5200a9d2:	cc846783          	lwu	a5,-824(s0)
     5200a9d6:	0786                	slli	a5,a5,0x1
     5200a9d8:	97ba                	add	a5,a5,a4
-    5200a9da:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    5200a9da:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200a9de:	ccf41123          	sh	a5,-830(s0)
     5200a9e2:	d3043703          	ld	a4,-720(s0)
     5200a9e6:	cc446683          	lwu	a3,-828(s0)
@@ -13725,7 +13725,7 @@ Disassembly of section .text:
     5200ab58:	c8f43c23          	sd	a5,-872(s0)
     5200ab5c:	88040793          	addi	a5,s0,-1920
     5200ab60:	c9843703          	ld	a4,-872(s0)
-    5200ab64:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    5200ab64:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200ab68:	00174603          	lbu	a2,1(a4)
     5200ab6c:	00274683          	lbu	a3,2(a4)
     5200ab70:	00374703          	lbu	a4,3(a4)
@@ -14314,7 +14314,7 @@ Disassembly of section .text:
     5200b2d0:	b7046783          	lwu	a5,-1168(s0)
     5200b2d4:	0786                	slli	a5,a5,0x1
     5200b2d6:	97ba                	add	a5,a5,a4
-    5200b2d8:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    5200b2d8:	0007d783          	lhu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200b2dc:	b6f41523          	sh	a5,-1174(s0)
     5200b2e0:	bd843703          	ld	a4,-1064(s0)
     5200b2e4:	b6c46683          	lwu	a3,-1172(s0)
@@ -14437,7 +14437,7 @@ Disassembly of section .text:
     5200b456:	b4f43023          	sd	a5,-1216(s0)
     5200b45a:	88840793          	addi	a5,s0,-1912
     5200b45e:	b4043703          	ld	a4,-1216(s0)
-    5200b462:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    5200b462:	00074583          	lbu	a1,0(a4) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200b466:	00174603          	lbu	a2,1(a4)
     5200b46a:	00274683          	lbu	a3,2(a4)
     5200b46e:	00374703          	lbu	a4,3(a4)
@@ -14965,7 +14965,7 @@ Disassembly of section .text:
     5200bade:	639c                	ld	a5,0(a5)
     5200bae0:	a4f43823          	sd	a5,-1456(s0)
     5200bae4:	00005717          	auipc	a4,0x5
-    5200bae8:	63c70713          	addi	a4,a4,1596 # 52011120 <deflate_length_slot>
+    5200bae8:	66470713          	addi	a4,a4,1636 # 52011148 <deflate_length_slot>
     5200baec:	a6c46783          	lwu	a5,-1428(s0)
     5200baf0:	97ba                	add	a5,a5,a4
     5200baf2:	0007c783          	lbu	a5,0(a5)
@@ -14977,7 +14977,7 @@ Disassembly of section .text:
     5200bb0a:	10000793          	li	a5,256
     5200bb0e:	00e7ed63          	bltu	a5,a4,5200bb28 <deflate_compress_lazy2+0x2258>
     5200bb12:	00005717          	auipc	a4,0x5
-    5200bb16:	71670713          	addi	a4,a4,1814 # 52011228 <deflate_offset_slot>
+    5200bb16:	73e70713          	addi	a4,a4,1854 # 52011250 <deflate_offset_slot>
     5200bb1a:	a4846783          	lwu	a5,-1464(s0)
     5200bb1e:	97ba                	add	a5,a5,a4
     5200bb20:	0007c783          	lbu	a5,0(a5)
@@ -14991,7 +14991,7 @@ Disassembly of section .text:
     5200bb36:	1007879b          	addiw	a5,a5,256
     5200bb3a:	2781                	sext.w	a5,a5
     5200bb3c:	00005717          	auipc	a4,0x5
-    5200bb40:	6ec70713          	addi	a4,a4,1772 # 52011228 <deflate_offset_slot>
+    5200bb40:	71470713          	addi	a4,a4,1812 # 52011250 <deflate_offset_slot>
     5200bb44:	1782                	slli	a5,a5,0x20
     5200bb46:	9381                	srli	a5,a5,0x20
     5200bb48:	97ba                	add	a5,a5,a4
@@ -15330,7 +15330,7 @@ Disassembly of section .text:
     5200bf7e:	639c                	ld	a5,0(a5)
     5200bf80:	98f43823          	sd	a5,-1648(s0)
     5200bf84:	00005717          	auipc	a4,0x5
-    5200bf88:	19c70713          	addi	a4,a4,412 # 52011120 <deflate_length_slot>
+    5200bf88:	1c470713          	addi	a4,a4,452 # 52011148 <deflate_length_slot>
     5200bf8c:	9ac46783          	lwu	a5,-1620(s0)
     5200bf90:	97ba                	add	a5,a5,a4
     5200bf92:	0007c783          	lbu	a5,0(a5) # 1e35a000 <TEXT_START-0x33ca6000>
@@ -15342,7 +15342,7 @@ Disassembly of section .text:
     5200bfaa:	10000793          	li	a5,256
     5200bfae:	00e7ed63          	bltu	a5,a4,5200bfc8 <deflate_compress_lazy2+0x26f8>
     5200bfb2:	00005717          	auipc	a4,0x5
-    5200bfb6:	27670713          	addi	a4,a4,630 # 52011228 <deflate_offset_slot>
+    5200bfb6:	29e70713          	addi	a4,a4,670 # 52011250 <deflate_offset_slot>
     5200bfba:	98846783          	lwu	a5,-1656(s0)
     5200bfbe:	97ba                	add	a5,a5,a4
     5200bfc0:	0007c783          	lbu	a5,0(a5)
@@ -15356,7 +15356,7 @@ Disassembly of section .text:
     5200bfd6:	1007879b          	addiw	a5,a5,256
     5200bfda:	2781                	sext.w	a5,a5
     5200bfdc:	00005717          	auipc	a4,0x5
-    5200bfe0:	24c70713          	addi	a4,a4,588 # 52011228 <deflate_offset_slot>
+    5200bfe0:	27470713          	addi	a4,a4,628 # 52011250 <deflate_offset_slot>
     5200bfe4:	1782                	slli	a5,a5,0x20
     5200bfe6:	9381                	srli	a5,a5,0x20
     5200bfe8:	97ba                	add	a5,a5,a4
@@ -15819,7 +15819,7 @@ Disassembly of section .text:
     5200c5b8:	c798                	sw	a4,8(a5)
     5200c5ba:	a8ad                	j	5200c634 <deflate_tally_item_list+0x108>
     5200c5bc:	00005717          	auipc	a4,0x5
-    5200c5c0:	b6470713          	addi	a4,a4,-1180 # 52011120 <deflate_length_slot>
+    5200c5c0:	b8c70713          	addi	a4,a4,-1140 # 52011148 <deflate_length_slot>
     5200c5c4:	fdc46783          	lwu	a5,-36(s0)
     5200c5c8:	97ba                	add	a5,a5,a4
     5200c5ca:	0007c783          	lbu	a5,0(a5)
@@ -15966,7 +15966,7 @@ Disassembly of section .text:
     5200c76e:	863e                	mv	a2,a5
     5200c770:	4581                	li	a1,0
     5200c772:	853a                	mv	a0,a4
-    5200c774:	7e5030ef          	jal	ra,52010758 <memset>
+    5200c774:	00c040ef          	jal	ra,52010780 <memset>
     5200c778:	fd843703          	ld	a4,-40(s0)
     5200c77c:	6785                	lui	a5,0x1
     5200c77e:	97ba                	add	a5,a5,a4
@@ -15997,7 +15997,7 @@ Disassembly of section .text:
     5200c7c4:	2987c783          	lbu	a5,664(a5)
     5200c7c8:	0007869b          	sext.w	a3,a5
     5200c7cc:	00005617          	auipc	a2,0x5
-    5200c7d0:	c7460613          	addi	a2,a2,-908 # 52011440 <deflate_extra_precode_bits>
+    5200c7d0:	c9c60613          	addi	a2,a2,-868 # 52011468 <deflate_extra_precode_bits>
     5200c7d4:	fe846783          	lwu	a5,-24(s0)
     5200c7d8:	97b2                	add	a5,a5,a2
     5200c7da:	0007c783          	lbu	a5,0(a5)
@@ -16062,7 +16062,7 @@ Disassembly of section .text:
     5200c88e:	eff7879b          	addiw	a5,a5,-257
     5200c892:	2781                	sext.w	a5,a5
     5200c894:	00004617          	auipc	a2,0x4
-    5200c898:	7d460613          	addi	a2,a2,2004 # 52011068 <deflate_extra_length_bits>
+    5200c898:	7fc60613          	addi	a2,a2,2044 # 52011090 <deflate_extra_length_bits>
     5200c89c:	1782                	slli	a5,a5,0x20
     5200c89e:	9381                	srli	a5,a5,0x20
     5200c8a0:	97b2                	add	a5,a5,a2
@@ -16098,8 +16098,8 @@ Disassembly of section .text:
     5200c8fc:	97b6                	add	a5,a5,a3
     5200c8fe:	ba07c783          	lbu	a5,-1120(a5)
     5200c902:	0007869b          	sext.w	a3,a5
-    5200c906:	00004617          	auipc	a2,0x4
-    5200c90a:	7fa60613          	addi	a2,a2,2042 # 52011100 <deflate_extra_offset_bits>
+    5200c906:	00005617          	auipc	a2,0x5
+    5200c90a:	82260613          	addi	a2,a2,-2014 # 52011128 <deflate_extra_offset_bits>
     5200c90e:	fe846783          	lwu	a5,-24(s0)
     5200c912:	97b2                	add	a5,a5,a2
     5200c914:	0007c783          	lbu	a5,0(a5)
@@ -16169,7 +16169,7 @@ Disassembly of section .text:
     5200c9d2:	fef42623          	sw	a5,-20(s0)
     5200c9d6:	a861                	j	5200ca6e <deflate_set_costs_from_codes+0x118>
     5200c9d8:	00004717          	auipc	a4,0x4
-    5200c9dc:	74870713          	addi	a4,a4,1864 # 52011120 <deflate_length_slot>
+    5200c9dc:	77070713          	addi	a4,a4,1904 # 52011148 <deflate_length_slot>
     5200c9e0:	fec46783          	lwu	a5,-20(s0)
     5200c9e4:	97ba                	add	a5,a5,a4
     5200c9e6:	0007c783          	lbu	a5,0(a5)
@@ -16191,7 +16191,7 @@ Disassembly of section .text:
     5200ca1c:	47b5                	li	a5,13
     5200ca1e:	fcf42e23          	sw	a5,-36(s0)
     5200ca22:	00004717          	auipc	a4,0x4
-    5200ca26:	64670713          	addi	a4,a4,1606 # 52011068 <deflate_extra_length_bits>
+    5200ca26:	66e70713          	addi	a4,a4,1646 # 52011090 <deflate_extra_length_bits>
     5200ca2a:	fe446783          	lwu	a5,-28(s0)
     5200ca2e:	97ba                	add	a5,a5,a4
     5200ca30:	0007c783          	lbu	a5,0(a5)
@@ -16233,7 +16233,7 @@ Disassembly of section .text:
     5200caa6:	47a9                	li	a5,10
     5200caa8:	fef42423          	sw	a5,-24(s0)
     5200caac:	00004717          	auipc	a4,0x4
-    5200cab0:	65470713          	addi	a4,a4,1620 # 52011100 <deflate_extra_offset_bits>
+    5200cab0:	67c70713          	addi	a4,a4,1660 # 52011128 <deflate_extra_offset_bits>
     5200cab4:	fec46783          	lwu	a5,-20(s0)
     5200cab8:	97ba                	add	a5,a5,a4
     5200caba:	0007c783          	lbu	a5,0(a5)
@@ -16287,7 +16287,7 @@ Disassembly of section .text:
     5200cb4c:	863e                	mv	a2,a5
     5200cb4e:	4581                	li	a1,0
     5200cb50:	853a                	mv	a0,a4
-    5200cb52:	407030ef          	jal	ra,52010758 <memset>
+    5200cb52:	42f030ef          	jal	ra,52010780 <memset>
     5200cb56:	fe842783          	lw	a5,-24(s0)
     5200cb5a:	00b7d79b          	srliw	a5,a5,0xb
     5200cb5e:	fcf42e23          	sw	a5,-36(s0)
@@ -16408,7 +16408,7 @@ Disassembly of section .text:
     5200ccd0:	a019                	j	5200ccd6 <deflate_choose_default_litlen_costs+0x1c6>
     5200ccd2:	fe042023          	sw	zero,-32(s0)
     5200ccd6:	00005617          	auipc	a2,0x5
-    5200ccda:	88260613          	addi	a2,a2,-1918 # 52011558 <default_litlen_costs>
+    5200ccda:	8aa60613          	addi	a2,a2,-1878 # 52011580 <default_litlen_costs>
     5200ccde:	fec46683          	lwu	a3,-20(s0)
     5200cce2:	fe046703          	lwu	a4,-32(s0)
     5200cce6:	87ba                	mv	a5,a4
@@ -16422,7 +16422,7 @@ Disassembly of section .text:
     5200ccfa:	fb043783          	ld	a5,-80(s0)
     5200ccfe:	c398                	sw	a4,0(a5)
     5200cd00:	00005697          	auipc	a3,0x5
-    5200cd04:	85868693          	addi	a3,a3,-1960 # 52011558 <default_litlen_costs>
+    5200cd04:	88068693          	addi	a3,a3,-1920 # 52011580 <default_litlen_costs>
     5200cd08:	fe046703          	lwu	a4,-32(s0)
     5200cd0c:	87ba                	mv	a5,a4
     5200cd0e:	079e                	slli	a5,a5,0x7
@@ -16475,13 +16475,13 @@ Disassembly of section .text:
     5200cd92:	fc042783          	lw	a5,-64(s0)
     5200cd96:	fef42223          	sw	a5,-28(s0)
     5200cd9a:	00004717          	auipc	a4,0x4
-    5200cd9e:	38670713          	addi	a4,a4,902 # 52011120 <deflate_length_slot>
+    5200cd9e:	3ae70713          	addi	a4,a4,942 # 52011148 <deflate_length_slot>
     5200cda2:	fe846783          	lwu	a5,-24(s0)
     5200cda6:	97ba                	add	a5,a5,a4
     5200cda8:	0007c783          	lbu	a5,0(a5)
     5200cdac:	fef42023          	sw	a5,-32(s0)
     5200cdb0:	00004717          	auipc	a4,0x4
-    5200cdb4:	2b870713          	addi	a4,a4,696 # 52011068 <deflate_extra_length_bits>
+    5200cdb4:	2e070713          	addi	a4,a4,736 # 52011090 <deflate_extra_length_bits>
     5200cdb8:	fe046783          	lwu	a5,-32(s0)
     5200cdbc:	97ba                	add	a5,a5,a4
     5200cdbe:	0007c783          	lbu	a5,0(a5)
@@ -16514,7 +16514,7 @@ Disassembly of section .text:
     5200ce14:	fec42783          	lw	a5,-20(s0)
     5200ce18:	fcf42c23          	sw	a5,-40(s0)
     5200ce1c:	00004717          	auipc	a4,0x4
-    5200ce20:	2e470713          	addi	a4,a4,740 # 52011100 <deflate_extra_offset_bits>
+    5200ce20:	30c70713          	addi	a4,a4,780 # 52011128 <deflate_extra_offset_bits>
     5200ce24:	fd846783          	lwu	a5,-40(s0)
     5200ce28:	97ba                	add	a5,a5,a4
     5200ce2a:	0007c783          	lbu	a5,0(a5)
@@ -16766,13 +16766,13 @@ Disassembly of section .text:
     5200d12c:	fb842783          	lw	a5,-72(s0)
     5200d130:	f8f42c23          	sw	a5,-104(s0)
     5200d134:	00004697          	auipc	a3,0x4
-    5200d138:	fec68693          	addi	a3,a3,-20 # 52011120 <deflate_length_slot>
+    5200d138:	01468693          	addi	a3,a3,20 # 52011148 <deflate_length_slot>
     5200d13c:	f9c46783          	lwu	a5,-100(s0)
     5200d140:	97b6                	add	a5,a5,a3
     5200d142:	0007c783          	lbu	a5,0(a5)
     5200d146:	f8f42a23          	sw	a5,-108(s0)
     5200d14a:	00004697          	auipc	a3,0x4
-    5200d14e:	f1e68693          	addi	a3,a3,-226 # 52011068 <deflate_extra_length_bits>
+    5200d14e:	f4668693          	addi	a3,a3,-186 # 52011090 <deflate_extra_length_bits>
     5200d152:	f9446783          	lwu	a5,-108(s0)
     5200d156:	97b6                	add	a5,a5,a3
     5200d158:	0007c783          	lbu	a5,0(a5)
@@ -16878,7 +16878,7 @@ Disassembly of section .text:
     5200d28c:	fb042783          	lw	a5,-80(s0)
     5200d290:	f6f42e23          	sw	a5,-132(s0)
     5200d294:	00004697          	auipc	a3,0x4
-    5200d298:	e6c68693          	addi	a3,a3,-404 # 52011100 <deflate_extra_offset_bits>
+    5200d298:	e9468693          	addi	a3,a3,-364 # 52011128 <deflate_extra_offset_bits>
     5200d29c:	f7c46783          	lwu	a5,-132(s0)
     5200d2a0:	97b6                	add	a5,a5,a3
     5200d2a2:	0007c783          	lbu	a5,0(a5)
@@ -17096,13 +17096,13 @@ Disassembly of section .text:
     5200d536:	f5042783          	lw	a5,-176(s0)
     5200d53a:	f2f42823          	sw	a5,-208(s0)
     5200d53e:	00004697          	auipc	a3,0x4
-    5200d542:	be268693          	addi	a3,a3,-1054 # 52011120 <deflate_length_slot>
+    5200d542:	c0a68693          	addi	a3,a3,-1014 # 52011148 <deflate_length_slot>
     5200d546:	f3446783          	lwu	a5,-204(s0)
     5200d54a:	97b6                	add	a5,a5,a3
     5200d54c:	0007c783          	lbu	a5,0(a5)
     5200d550:	f2f42623          	sw	a5,-212(s0)
     5200d554:	00004697          	auipc	a3,0x4
-    5200d558:	b1468693          	addi	a3,a3,-1260 # 52011068 <deflate_extra_length_bits>
+    5200d558:	b3c68693          	addi	a3,a3,-1220 # 52011090 <deflate_extra_length_bits>
     5200d55c:	f2c46783          	lwu	a5,-212(s0)
     5200d560:	97b6                	add	a5,a5,a3
     5200d562:	0007c783          	lbu	a5,0(a5)
@@ -17208,7 +17208,7 @@ Disassembly of section .text:
     5200d696:	f4842783          	lw	a5,-184(s0)
     5200d69a:	f0f42a23          	sw	a5,-236(s0)
     5200d69e:	00004697          	auipc	a3,0x4
-    5200d6a2:	a6268693          	addi	a3,a3,-1438 # 52011100 <deflate_extra_offset_bits>
+    5200d6a2:	a8a68693          	addi	a3,a3,-1398 # 52011128 <deflate_extra_offset_bits>
     5200d6a6:	f1446783          	lwu	a5,-236(s0)
     5200d6aa:	97b6                	add	a5,a5,a3
     5200d6ac:	0007c783          	lbu	a5,0(a5)
@@ -17422,14 +17422,14 @@ Disassembly of section .text:
     5200d932:	ecf42623          	sw	a5,-308(s0)
     5200d936:	ee842783          	lw	a5,-280(s0)
     5200d93a:	ecf42423          	sw	a5,-312(s0)
-    5200d93e:	00003697          	auipc	a3,0x3
-    5200d942:	7e268693          	addi	a3,a3,2018 # 52011120 <deflate_length_slot>
+    5200d93e:	00004697          	auipc	a3,0x4
+    5200d942:	80a68693          	addi	a3,a3,-2038 # 52011148 <deflate_length_slot>
     5200d946:	ecc46783          	lwu	a5,-308(s0)
     5200d94a:	97b6                	add	a5,a5,a3
     5200d94c:	0007c783          	lbu	a5,0(a5)
     5200d950:	ecf42223          	sw	a5,-316(s0)
     5200d954:	00003697          	auipc	a3,0x3
-    5200d958:	71468693          	addi	a3,a3,1812 # 52011068 <deflate_extra_length_bits>
+    5200d958:	73c68693          	addi	a3,a3,1852 # 52011090 <deflate_extra_length_bits>
     5200d95c:	ec446783          	lwu	a5,-316(s0)
     5200d960:	97b6                	add	a5,a5,a3
     5200d962:	0007c783          	lbu	a5,0(a5)
@@ -17535,7 +17535,7 @@ Disassembly of section .text:
     5200da96:	ee042783          	lw	a5,-288(s0)
     5200da9a:	eaf42623          	sw	a5,-340(s0)
     5200da9e:	00003697          	auipc	a3,0x3
-    5200daa2:	66268693          	addi	a3,a3,1634 # 52011100 <deflate_extra_offset_bits>
+    5200daa2:	68a68693          	addi	a3,a3,1674 # 52011128 <deflate_extra_offset_bits>
     5200daa6:	eac46783          	lwu	a5,-340(s0)
     5200daaa:	97b6                	add	a5,a5,a3
     5200daac:	0007c783          	lbu	a5,0(a5)
@@ -17745,13 +17745,13 @@ Disassembly of section .text:
     5200dd26:	e8042783          	lw	a5,-384(s0)
     5200dd2a:	e6f42023          	sw	a5,-416(s0)
     5200dd2e:	00003697          	auipc	a3,0x3
-    5200dd32:	3f268693          	addi	a3,a3,1010 # 52011120 <deflate_length_slot>
+    5200dd32:	41a68693          	addi	a3,a3,1050 # 52011148 <deflate_length_slot>
     5200dd36:	e6446783          	lwu	a5,-412(s0)
     5200dd3a:	97b6                	add	a5,a5,a3
     5200dd3c:	0007c783          	lbu	a5,0(a5)
     5200dd40:	e4f42e23          	sw	a5,-420(s0)
     5200dd44:	00003697          	auipc	a3,0x3
-    5200dd48:	32468693          	addi	a3,a3,804 # 52011068 <deflate_extra_length_bits>
+    5200dd48:	34c68693          	addi	a3,a3,844 # 52011090 <deflate_extra_length_bits>
     5200dd4c:	e5c46783          	lwu	a5,-420(s0)
     5200dd50:	97b6                	add	a5,a5,a3
     5200dd52:	0007c783          	lbu	a5,0(a5)
@@ -17857,7 +17857,7 @@ Disassembly of section .text:
     5200de86:	e7842783          	lw	a5,-392(s0)
     5200de8a:	e4f42223          	sw	a5,-444(s0)
     5200de8e:	00003697          	auipc	a3,0x3
-    5200de92:	27268693          	addi	a3,a3,626 # 52011100 <deflate_extra_offset_bits>
+    5200de92:	29a68693          	addi	a3,a3,666 # 52011128 <deflate_extra_offset_bits>
     5200de96:	e4446783          	lwu	a5,-444(s0)
     5200de9a:	97b6                	add	a5,a5,a3
     5200de9c:	0007c783          	lbu	a5,0(a5)
@@ -18271,7 +18271,7 @@ Disassembly of section .text:
     5200e3a8:	863e                	mv	a2,a5
     5200e3aa:	85b6                	mv	a1,a3
     5200e3ac:	853a                	mv	a0,a4
-    5200e3ae:	358020ef          	jal	ra,52010706 <memcpy>
+    5200e3ae:	380020ef          	jal	ra,5201072e <memcpy>
     5200e3b2:	fb843703          	ld	a4,-72(s0)
     5200e3b6:	6785                	lui	a5,0x1
     5200e3b8:	a8078793          	addi	a5,a5,-1408 # a80 <TEXT_START-0x51fff580>
@@ -18337,7 +18337,7 @@ Disassembly of section .text:
     5200e47e:	863e                	mv	a2,a5
     5200e480:	85b6                	mv	a1,a3
     5200e482:	853a                	mv	a0,a4
-    5200e484:	282020ef          	jal	ra,52010706 <memcpy>
+    5200e484:	2aa020ef          	jal	ra,5201072e <memcpy>
     5200e488:	fa442783          	lw	a5,-92(s0)
     5200e48c:	f9843603          	ld	a2,-104(s0)
     5200e490:	85be                	mv	a1,a5
@@ -18382,7 +18382,7 @@ Disassembly of section .text:
     5200e504:	863e                	mv	a2,a5
     5200e506:	4581                	li	a1,0
     5200e508:	853a                	mv	a0,a4
-    5200e50a:	24e020ef          	jal	ra,52010758 <memset>
+    5200e50a:	276020ef          	jal	ra,52010780 <memset>
     5200e50e:	fe843703          	ld	a4,-24(s0)
     5200e512:	008987b7          	lui	a5,0x898
     5200e516:	dd878793          	addi	a5,a5,-552 # 897dd8 <TEXT_START-0x51768228>
@@ -18392,7 +18392,7 @@ Disassembly of section .text:
     5200e522:	863e                	mv	a2,a5
     5200e524:	4581                	li	a1,0
     5200e526:	853a                	mv	a0,a4
-    5200e528:	230020ef          	jal	ra,52010758 <memset>
+    5200e528:	258020ef          	jal	ra,52010780 <memset>
     5200e52c:	0001                	nop
     5200e52e:	60e2                	ld	ra,24(sp)
     5200e530:	6442                	ld	s0,16(sp)
@@ -18530,7 +18530,7 @@ Disassembly of section .text:
     5200e6ae:	863e                	mv	a2,a5
     5200e6b0:	4581                	li	a1,0
     5200e6b2:	853a                	mv	a0,a4
-    5200e6b4:	0a4020ef          	jal	ra,52010758 <memset>
+    5200e6b4:	0cc020ef          	jal	ra,52010780 <memset>
     5200e6b8:	0001                	nop
     5200e6ba:	70a2                	ld	ra,40(sp)
     5200e6bc:	7402                	ld	s0,32(sp)
@@ -18819,7 +18819,7 @@ Disassembly of section .text:
     5200ea90:	e4f43423          	sd	a5,-440(s0)
     5200ea94:	e4843783          	ld	a5,-440(s0)
     5200ea98:	078d                	addi	a5,a5,3
-    5200ea9a:	0007c783          	lbu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    5200ea9a:	0007c783          	lbu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200ea9e:	2781                	sext.w	a5,a5
     5200eaa0:	0187979b          	slliw	a5,a5,0x18
     5200eaa4:	0007871b          	sext.w	a4,a5
@@ -19606,7 +19606,7 @@ Disassembly of section .text:
     5200f4b6:	c6f43c23          	sd	a5,-904(s0)
     5200f4ba:	c7843783          	ld	a5,-904(s0)
     5200f4be:	078d                	addi	a5,a5,3
-    5200f4c0:	0007c783          	lbu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39c8>
+    5200f4c0:	0007c783          	lbu	a5,0(a5) # ffffffffffff8000 <__BSS_END__+0xffffffffadfe39a0>
     5200f4c4:	2781                	sext.w	a5,a5
     5200f4c6:	0187979b          	slliw	a5,a5,0x18
     5200f4ca:	0007871b          	sext.w	a4,a5
@@ -20190,14 +20190,14 @@ Disassembly of section .text:
     5200fc60:	fe042623          	sw	zero,-20(s0)
     5200fc64:	a041                	j	5200fce4 <deflate_init_offset_slot_full+0x8e>
     5200fc66:	00001717          	auipc	a4,0x1
-    5200fc6a:	42270713          	addi	a4,a4,1058 # 52011088 <deflate_offset_slot_base>
+    5200fc6a:	44a70713          	addi	a4,a4,1098 # 520110b0 <deflate_offset_slot_base>
     5200fc6e:	fec46783          	lwu	a5,-20(s0)
     5200fc72:	078a                	slli	a5,a5,0x2
     5200fc74:	97ba                	add	a5,a5,a4
     5200fc76:	439c                	lw	a5,0(a5)
     5200fc78:	fef42423          	sw	a5,-24(s0)
     5200fc7c:	00001717          	auipc	a4,0x1
-    5200fc80:	48470713          	addi	a4,a4,1156 # 52011100 <deflate_extra_offset_bits>
+    5200fc80:	4ac70713          	addi	a4,a4,1196 # 52011128 <deflate_extra_offset_bits>
     5200fc84:	fec46783          	lwu	a5,-20(s0)
     5200fc88:	97ba                	add	a5,a5,a4
     5200fc8a:	0007c783          	lbu	a5,0(a5)
@@ -20301,7 +20301,7 @@ Disassembly of section .text:
     5200fdb6:	679c                	ld	a5,8(a5)
     5200fdb8:	a031                	j	5200fdc4 <libdeflate_alloc_compressor_ex+0xc8>
     5200fdba:	00002797          	auipc	a5,0x2
-    5200fdbe:	b3e78793          	addi	a5,a5,-1218 # 520118f8 <__DATA_BEGIN__>
+    5200fdbe:	b6678793          	addi	a5,a5,-1178 # 52011920 <__DATA_BEGIN__>
     5200fdc2:	639c                	ld	a5,0(a5)
     5200fdc4:	fe843603          	ld	a2,-24(s0)
     5200fdc8:	02000593          	li	a1,32
@@ -20319,7 +20319,7 @@ Disassembly of section .text:
     5200fdec:	6b9c                	ld	a5,16(a5)
     5200fdee:	a031                	j	5200fdfa <libdeflate_alloc_compressor_ex+0xfe>
     5200fdf0:	00002797          	auipc	a5,0x2
-    5200fdf4:	b1078793          	addi	a5,a5,-1264 # 52011900 <libdeflate_default_free_func>
+    5200fdf4:	b3878793          	addi	a5,a5,-1224 # 52011928 <libdeflate_default_free_func>
     5200fdf8:	639c                	ld	a5,0(a5)
     5200fdfa:	fe043703          	ld	a4,-32(s0)
     5200fdfe:	e71c                	sd	a5,8(a4)
@@ -20342,12 +20342,12 @@ Disassembly of section .text:
     5200fe34:	fdc46783          	lwu	a5,-36(s0)
     5200fe38:	00279713          	slli	a4,a5,0x2
     5200fe3c:	00002797          	auipc	a5,0x2
-    5200fe40:	a2478793          	addi	a5,a5,-1500 # 52011860 <default_litlen_costs+0x308>
+    5200fe40:	a4c78793          	addi	a5,a5,-1460 # 52011888 <default_litlen_costs+0x308>
     5200fe44:	97ba                	add	a5,a5,a4
     5200fe46:	439c                	lw	a5,0(a5)
     5200fe48:	0007871b          	sext.w	a4,a5
     5200fe4c:	00002797          	auipc	a5,0x2
-    5200fe50:	a1478793          	addi	a5,a5,-1516 # 52011860 <default_litlen_costs+0x308>
+    5200fe50:	a3c78793          	addi	a5,a5,-1476 # 52011888 <default_litlen_costs+0x308>
     5200fe54:	97ba                	add	a5,a5,a4
     5200fe56:	8782                	jr	a5
     5200fe58:	fe043783          	ld	a5,-32(s0)
@@ -20554,7 +20554,7 @@ Disassembly of section .text:
     520100cc:	fef42623          	sw	a5,-20(s0)
     520100d0:	fec42783          	lw	a5,-20(s0)
     520100d4:	00002597          	auipc	a1,0x2
-    520100d8:	80c58593          	addi	a1,a1,-2036 # 520118e0 <defaults.2408>
+    520100d8:	83458593          	addi	a1,a1,-1996 # 52011908 <defaults.2408>
     520100dc:	853e                	mv	a0,a5
     520100de:	c1fff0ef          	jal	ra,5200fcfc <libdeflate_alloc_compressor_ex>
     520100e2:	87aa                	mv	a5,a0
@@ -20773,11 +20773,11 @@ Disassembly of section .text:
     5201032c:	fea43423          	sd	a0,-24(s0)
     52010330:	feb43023          	sd	a1,-32(s0)
     52010334:	00001797          	auipc	a5,0x1
-    52010338:	5c478793          	addi	a5,a5,1476 # 520118f8 <__DATA_BEGIN__>
+    52010338:	5ec78793          	addi	a5,a5,1516 # 52011920 <__DATA_BEGIN__>
     5201033c:	fe843703          	ld	a4,-24(s0)
     52010340:	e398                	sd	a4,0(a5)
     52010342:	00001797          	auipc	a5,0x1
-    52010346:	5be78793          	addi	a5,a5,1470 # 52011900 <libdeflate_default_free_func>
+    52010346:	5e678793          	addi	a5,a5,1510 # 52011928 <libdeflate_default_free_func>
     5201034a:	fe043703          	ld	a4,-32(s0)
     5201034e:	e398                	sd	a4,0(a5)
     52010350:	0001                	nop
@@ -20862,7 +20862,7 @@ Disassembly of section .text:
     52010448:	fb843603          	ld	a2,-72(s0)
     5201044c:	fd843583          	ld	a1,-40(s0)
     52010450:	fe043503          	ld	a0,-32(s0)
-    52010454:	2b2000ef          	jal	ra,52010706 <memcpy>
+    52010454:	2da000ef          	jal	ra,5201072e <memcpy>
     52010458:	87aa                	mv	a5,a0
     5201045a:	a081                	j	5201049a <memmove+0x82>
     5201045c:	fb843783          	ld	a5,-72(s0)
@@ -21142,298 +21142,317 @@ Disassembly of section .text:
     52010702:	6105                	addi	sp,sp,32
     52010704:	8082                	ret
 
-0000000052010706 <memcpy>:
-    52010706:	7179                	addi	sp,sp,-48
-    52010708:	f422                	sd	s0,40(sp)
-    5201070a:	1800                	addi	s0,sp,48
-    5201070c:	fea43423          	sd	a0,-24(s0)
-    52010710:	feb43023          	sd	a1,-32(s0)
-    52010714:	87b2                	mv	a5,a2
-    52010716:	fcf42e23          	sw	a5,-36(s0)
-    5201071a:	a035                	j	52010746 <memcpy+0x40>
-    5201071c:	fe043703          	ld	a4,-32(s0)
-    52010720:	00170793          	addi	a5,a4,1
-    52010724:	fef43023          	sd	a5,-32(s0)
-    52010728:	fe843783          	ld	a5,-24(s0)
-    5201072c:	00178693          	addi	a3,a5,1 # 50150001 <TEXT_START-0x1eaffff>
-    52010730:	fed43423          	sd	a3,-24(s0)
-    52010734:	00074703          	lbu	a4,0(a4)
-    52010738:	00e78023          	sb	a4,0(a5)
-    5201073c:	fdc42783          	lw	a5,-36(s0)
-    52010740:	37fd                	addiw	a5,a5,-1
-    52010742:	fcf42e23          	sw	a5,-36(s0)
-    52010746:	fdc42783          	lw	a5,-36(s0)
-    5201074a:	2781                	sext.w	a5,a5
-    5201074c:	fbe1                	bnez	a5,5201071c <memcpy+0x16>
-    5201074e:	0001                	nop
-    52010750:	0001                	nop
-    52010752:	7422                	ld	s0,40(sp)
-    52010754:	6145                	addi	sp,sp,48
-    52010756:	8082                	ret
+0000000052010706 <send_ipi>:
+    52010706:	1101                	addi	sp,sp,-32
+    52010708:	ec06                	sd	ra,24(sp)
+    5201070a:	e822                	sd	s0,16(sp)
+    5201070c:	1000                	addi	s0,sp,32
+    5201070e:	fea43423          	sd	a0,-24(s0)
+    52010712:	fe843583          	ld	a1,-24(s0)
+    52010716:	4781                	li	a5,0
+    52010718:	4701                	li	a4,0
+    5201071a:	4681                	li	a3,0
+    5201071c:	4601                	li	a2,0
+    5201071e:	4511                	li	a0,4
+    52010720:	e19ff0ef          	jal	ra,52010538 <call_bios>
+    52010724:	0001                	nop
+    52010726:	60e2                	ld	ra,24(sp)
+    52010728:	6442                	ld	s0,16(sp)
+    5201072a:	6105                	addi	sp,sp,32
+    5201072c:	8082                	ret
 
-0000000052010758 <memset>:
-    52010758:	7179                	addi	sp,sp,-48
-    5201075a:	f422                	sd	s0,40(sp)
-    5201075c:	1800                	addi	s0,sp,48
-    5201075e:	fca43c23          	sd	a0,-40(s0)
-    52010762:	87ae                	mv	a5,a1
-    52010764:	8732                	mv	a4,a2
-    52010766:	fcf40ba3          	sb	a5,-41(s0)
-    5201076a:	87ba                	mv	a5,a4
-    5201076c:	fcf42823          	sw	a5,-48(s0)
-    52010770:	fd843783          	ld	a5,-40(s0)
-    52010774:	fef43423          	sd	a5,-24(s0)
-    52010778:	a005                	j	52010798 <memset+0x40>
-    5201077a:	fe843783          	ld	a5,-24(s0)
-    5201077e:	00178713          	addi	a4,a5,1
-    52010782:	fee43423          	sd	a4,-24(s0)
-    52010786:	fd744703          	lbu	a4,-41(s0)
-    5201078a:	00e78023          	sb	a4,0(a5)
-    5201078e:	fd042783          	lw	a5,-48(s0)
-    52010792:	37fd                	addiw	a5,a5,-1
+000000005201072e <memcpy>:
+    5201072e:	7179                	addi	sp,sp,-48
+    52010730:	f422                	sd	s0,40(sp)
+    52010732:	1800                	addi	s0,sp,48
+    52010734:	fea43423          	sd	a0,-24(s0)
+    52010738:	feb43023          	sd	a1,-32(s0)
+    5201073c:	87b2                	mv	a5,a2
+    5201073e:	fcf42e23          	sw	a5,-36(s0)
+    52010742:	a035                	j	5201076e <memcpy+0x40>
+    52010744:	fe043703          	ld	a4,-32(s0)
+    52010748:	00170793          	addi	a5,a4,1
+    5201074c:	fef43023          	sd	a5,-32(s0)
+    52010750:	fe843783          	ld	a5,-24(s0)
+    52010754:	00178693          	addi	a3,a5,1 # 50150001 <TEXT_START-0x1eaffff>
+    52010758:	fed43423          	sd	a3,-24(s0)
+    5201075c:	00074703          	lbu	a4,0(a4)
+    52010760:	00e78023          	sb	a4,0(a5)
+    52010764:	fdc42783          	lw	a5,-36(s0)
+    52010768:	37fd                	addiw	a5,a5,-1
+    5201076a:	fcf42e23          	sw	a5,-36(s0)
+    5201076e:	fdc42783          	lw	a5,-36(s0)
+    52010772:	2781                	sext.w	a5,a5
+    52010774:	fbe1                	bnez	a5,52010744 <memcpy+0x16>
+    52010776:	0001                	nop
+    52010778:	0001                	nop
+    5201077a:	7422                	ld	s0,40(sp)
+    5201077c:	6145                	addi	sp,sp,48
+    5201077e:	8082                	ret
+
+0000000052010780 <memset>:
+    52010780:	7179                	addi	sp,sp,-48
+    52010782:	f422                	sd	s0,40(sp)
+    52010784:	1800                	addi	s0,sp,48
+    52010786:	fca43c23          	sd	a0,-40(s0)
+    5201078a:	87ae                	mv	a5,a1
+    5201078c:	8732                	mv	a4,a2
+    5201078e:	fcf40ba3          	sb	a5,-41(s0)
+    52010792:	87ba                	mv	a5,a4
     52010794:	fcf42823          	sw	a5,-48(s0)
-    52010798:	fd042783          	lw	a5,-48(s0)
-    5201079c:	2781                	sext.w	a5,a5
-    5201079e:	fff1                	bnez	a5,5201077a <memset+0x22>
-    520107a0:	0001                	nop
-    520107a2:	0001                	nop
-    520107a4:	7422                	ld	s0,40(sp)
-    520107a6:	6145                	addi	sp,sp,48
-    520107a8:	8082                	ret
+    52010798:	fd843783          	ld	a5,-40(s0)
+    5201079c:	fef43423          	sd	a5,-24(s0)
+    520107a0:	a005                	j	520107c0 <memset+0x40>
+    520107a2:	fe843783          	ld	a5,-24(s0)
+    520107a6:	00178713          	addi	a4,a5,1
+    520107aa:	fee43423          	sd	a4,-24(s0)
+    520107ae:	fd744703          	lbu	a4,-41(s0)
+    520107b2:	00e78023          	sb	a4,0(a5)
+    520107b6:	fd042783          	lw	a5,-48(s0)
+    520107ba:	37fd                	addiw	a5,a5,-1
+    520107bc:	fcf42823          	sw	a5,-48(s0)
+    520107c0:	fd042783          	lw	a5,-48(s0)
+    520107c4:	2781                	sext.w	a5,a5
+    520107c6:	fff1                	bnez	a5,520107a2 <memset+0x22>
+    520107c8:	0001                	nop
+    520107ca:	0001                	nop
+    520107cc:	7422                	ld	s0,40(sp)
+    520107ce:	6145                	addi	sp,sp,48
+    520107d0:	8082                	ret
 
-00000000520107aa <bzero>:
-    520107aa:	1101                	addi	sp,sp,-32
-    520107ac:	ec06                	sd	ra,24(sp)
-    520107ae:	e822                	sd	s0,16(sp)
-    520107b0:	1000                	addi	s0,sp,32
-    520107b2:	fea43423          	sd	a0,-24(s0)
-    520107b6:	87ae                	mv	a5,a1
-    520107b8:	fef42223          	sw	a5,-28(s0)
-    520107bc:	fe442783          	lw	a5,-28(s0)
-    520107c0:	863e                	mv	a2,a5
-    520107c2:	4581                	li	a1,0
-    520107c4:	fe843503          	ld	a0,-24(s0)
-    520107c8:	f91ff0ef          	jal	ra,52010758 <memset>
-    520107cc:	0001                	nop
-    520107ce:	60e2                	ld	ra,24(sp)
-    520107d0:	6442                	ld	s0,16(sp)
-    520107d2:	6105                	addi	sp,sp,32
-    520107d4:	8082                	ret
+00000000520107d2 <bzero>:
+    520107d2:	1101                	addi	sp,sp,-32
+    520107d4:	ec06                	sd	ra,24(sp)
+    520107d6:	e822                	sd	s0,16(sp)
+    520107d8:	1000                	addi	s0,sp,32
+    520107da:	fea43423          	sd	a0,-24(s0)
+    520107de:	87ae                	mv	a5,a1
+    520107e0:	fef42223          	sw	a5,-28(s0)
+    520107e4:	fe442783          	lw	a5,-28(s0)
+    520107e8:	863e                	mv	a2,a5
+    520107ea:	4581                	li	a1,0
+    520107ec:	fe843503          	ld	a0,-24(s0)
+    520107f0:	f91ff0ef          	jal	ra,52010780 <memset>
+    520107f4:	0001                	nop
+    520107f6:	60e2                	ld	ra,24(sp)
+    520107f8:	6442                	ld	s0,16(sp)
+    520107fa:	6105                	addi	sp,sp,32
+    520107fc:	8082                	ret
 
-00000000520107d6 <strlen>:
-    520107d6:	7179                	addi	sp,sp,-48
-    520107d8:	f422                	sd	s0,40(sp)
-    520107da:	1800                	addi	s0,sp,48
-    520107dc:	fca43c23          	sd	a0,-40(s0)
-    520107e0:	fe042623          	sw	zero,-20(s0)
-    520107e4:	a031                	j	520107f0 <strlen+0x1a>
-    520107e6:	fec42783          	lw	a5,-20(s0)
-    520107ea:	2785                	addiw	a5,a5,1
-    520107ec:	fef42623          	sw	a5,-20(s0)
-    520107f0:	fec42783          	lw	a5,-20(s0)
-    520107f4:	fd843703          	ld	a4,-40(s0)
-    520107f8:	97ba                	add	a5,a5,a4
-    520107fa:	0007c783          	lbu	a5,0(a5)
-    520107fe:	f7e5                	bnez	a5,520107e6 <strlen+0x10>
-    52010800:	fec42783          	lw	a5,-20(s0)
-    52010804:	853e                	mv	a0,a5
-    52010806:	7422                	ld	s0,40(sp)
-    52010808:	6145                	addi	sp,sp,48
-    5201080a:	8082                	ret
+00000000520107fe <strlen>:
+    520107fe:	7179                	addi	sp,sp,-48
+    52010800:	f422                	sd	s0,40(sp)
+    52010802:	1800                	addi	s0,sp,48
+    52010804:	fca43c23          	sd	a0,-40(s0)
+    52010808:	fe042623          	sw	zero,-20(s0)
+    5201080c:	a031                	j	52010818 <strlen+0x1a>
+    5201080e:	fec42783          	lw	a5,-20(s0)
+    52010812:	2785                	addiw	a5,a5,1
+    52010814:	fef42623          	sw	a5,-20(s0)
+    52010818:	fec42783          	lw	a5,-20(s0)
+    5201081c:	fd843703          	ld	a4,-40(s0)
+    52010820:	97ba                	add	a5,a5,a4
+    52010822:	0007c783          	lbu	a5,0(a5)
+    52010826:	f7e5                	bnez	a5,5201080e <strlen+0x10>
+    52010828:	fec42783          	lw	a5,-20(s0)
+    5201082c:	853e                	mv	a0,a5
+    5201082e:	7422                	ld	s0,40(sp)
+    52010830:	6145                	addi	sp,sp,48
+    52010832:	8082                	ret
 
-000000005201080c <strcmp>:
-    5201080c:	1101                	addi	sp,sp,-32
-    5201080e:	ec22                	sd	s0,24(sp)
-    52010810:	1000                	addi	s0,sp,32
-    52010812:	fea43423          	sd	a0,-24(s0)
-    52010816:	feb43023          	sd	a1,-32(s0)
-    5201081a:	a0a1                	j	52010862 <strcmp+0x56>
-    5201081c:	fe843783          	ld	a5,-24(s0)
-    52010820:	0007c703          	lbu	a4,0(a5)
-    52010824:	fe043783          	ld	a5,-32(s0)
-    52010828:	0007c783          	lbu	a5,0(a5)
-    5201082c:	02f70163          	beq	a4,a5,5201084e <strcmp+0x42>
-    52010830:	fe843783          	ld	a5,-24(s0)
-    52010834:	0007c783          	lbu	a5,0(a5)
-    52010838:	0007871b          	sext.w	a4,a5
-    5201083c:	fe043783          	ld	a5,-32(s0)
-    52010840:	0007c783          	lbu	a5,0(a5)
-    52010844:	2781                	sext.w	a5,a5
-    52010846:	40f707bb          	subw	a5,a4,a5
-    5201084a:	2781                	sext.w	a5,a5
-    5201084c:	a099                	j	52010892 <strcmp+0x86>
-    5201084e:	fe843783          	ld	a5,-24(s0)
-    52010852:	0785                	addi	a5,a5,1
-    52010854:	fef43423          	sd	a5,-24(s0)
-    52010858:	fe043783          	ld	a5,-32(s0)
-    5201085c:	0785                	addi	a5,a5,1
-    5201085e:	fef43023          	sd	a5,-32(s0)
-    52010862:	fe843783          	ld	a5,-24(s0)
-    52010866:	0007c783          	lbu	a5,0(a5)
-    5201086a:	c791                	beqz	a5,52010876 <strcmp+0x6a>
-    5201086c:	fe043783          	ld	a5,-32(s0)
-    52010870:	0007c783          	lbu	a5,0(a5)
-    52010874:	f7c5                	bnez	a5,5201081c <strcmp+0x10>
+0000000052010834 <strcmp>:
+    52010834:	1101                	addi	sp,sp,-32
+    52010836:	ec22                	sd	s0,24(sp)
+    52010838:	1000                	addi	s0,sp,32
+    5201083a:	fea43423          	sd	a0,-24(s0)
+    5201083e:	feb43023          	sd	a1,-32(s0)
+    52010842:	a0a1                	j	5201088a <strcmp+0x56>
+    52010844:	fe843783          	ld	a5,-24(s0)
+    52010848:	0007c703          	lbu	a4,0(a5)
+    5201084c:	fe043783          	ld	a5,-32(s0)
+    52010850:	0007c783          	lbu	a5,0(a5)
+    52010854:	02f70163          	beq	a4,a5,52010876 <strcmp+0x42>
+    52010858:	fe843783          	ld	a5,-24(s0)
+    5201085c:	0007c783          	lbu	a5,0(a5)
+    52010860:	0007871b          	sext.w	a4,a5
+    52010864:	fe043783          	ld	a5,-32(s0)
+    52010868:	0007c783          	lbu	a5,0(a5)
+    5201086c:	2781                	sext.w	a5,a5
+    5201086e:	40f707bb          	subw	a5,a4,a5
+    52010872:	2781                	sext.w	a5,a5
+    52010874:	a099                	j	520108ba <strcmp+0x86>
     52010876:	fe843783          	ld	a5,-24(s0)
-    5201087a:	0007c783          	lbu	a5,0(a5)
-    5201087e:	0007871b          	sext.w	a4,a5
-    52010882:	fe043783          	ld	a5,-32(s0)
-    52010886:	0007c783          	lbu	a5,0(a5)
-    5201088a:	2781                	sext.w	a5,a5
-    5201088c:	40f707bb          	subw	a5,a4,a5
-    52010890:	2781                	sext.w	a5,a5
-    52010892:	853e                	mv	a0,a5
-    52010894:	6462                	ld	s0,24(sp)
-    52010896:	6105                	addi	sp,sp,32
-    52010898:	8082                	ret
+    5201087a:	0785                	addi	a5,a5,1
+    5201087c:	fef43423          	sd	a5,-24(s0)
+    52010880:	fe043783          	ld	a5,-32(s0)
+    52010884:	0785                	addi	a5,a5,1
+    52010886:	fef43023          	sd	a5,-32(s0)
+    5201088a:	fe843783          	ld	a5,-24(s0)
+    5201088e:	0007c783          	lbu	a5,0(a5)
+    52010892:	c791                	beqz	a5,5201089e <strcmp+0x6a>
+    52010894:	fe043783          	ld	a5,-32(s0)
+    52010898:	0007c783          	lbu	a5,0(a5)
+    5201089c:	f7c5                	bnez	a5,52010844 <strcmp+0x10>
+    5201089e:	fe843783          	ld	a5,-24(s0)
+    520108a2:	0007c783          	lbu	a5,0(a5)
+    520108a6:	0007871b          	sext.w	a4,a5
+    520108aa:	fe043783          	ld	a5,-32(s0)
+    520108ae:	0007c783          	lbu	a5,0(a5)
+    520108b2:	2781                	sext.w	a5,a5
+    520108b4:	40f707bb          	subw	a5,a4,a5
+    520108b8:	2781                	sext.w	a5,a5
+    520108ba:	853e                	mv	a0,a5
+    520108bc:	6462                	ld	s0,24(sp)
+    520108be:	6105                	addi	sp,sp,32
+    520108c0:	8082                	ret
 
-000000005201089a <strncmp>:
-    5201089a:	7139                	addi	sp,sp,-64
-    5201089c:	fc22                	sd	s0,56(sp)
-    5201089e:	0080                	addi	s0,sp,64
-    520108a0:	fca43c23          	sd	a0,-40(s0)
-    520108a4:	fcb43823          	sd	a1,-48(s0)
-    520108a8:	87b2                	mv	a5,a2
-    520108aa:	fcf42623          	sw	a5,-52(s0)
-    520108ae:	fe042623          	sw	zero,-20(s0)
-    520108b2:	a8a1                	j	5201090a <strncmp+0x70>
-    520108b4:	fec42783          	lw	a5,-20(s0)
-    520108b8:	fd843703          	ld	a4,-40(s0)
-    520108bc:	97ba                	add	a5,a5,a4
-    520108be:	0007c683          	lbu	a3,0(a5)
-    520108c2:	fec42783          	lw	a5,-20(s0)
-    520108c6:	fd043703          	ld	a4,-48(s0)
-    520108ca:	97ba                	add	a5,a5,a4
-    520108cc:	0007c783          	lbu	a5,0(a5)
-    520108d0:	8736                	mv	a4,a3
-    520108d2:	02f70763          	beq	a4,a5,52010900 <strncmp+0x66>
-    520108d6:	fec42783          	lw	a5,-20(s0)
-    520108da:	fd843703          	ld	a4,-40(s0)
-    520108de:	97ba                	add	a5,a5,a4
-    520108e0:	0007c783          	lbu	a5,0(a5)
-    520108e4:	0007871b          	sext.w	a4,a5
-    520108e8:	fec42783          	lw	a5,-20(s0)
-    520108ec:	fd043683          	ld	a3,-48(s0)
-    520108f0:	97b6                	add	a5,a5,a3
-    520108f2:	0007c783          	lbu	a5,0(a5)
-    520108f6:	2781                	sext.w	a5,a5
-    520108f8:	40f707bb          	subw	a5,a4,a5
-    520108fc:	2781                	sext.w	a5,a5
-    520108fe:	a839                	j	5201091c <strncmp+0x82>
-    52010900:	fec42783          	lw	a5,-20(s0)
-    52010904:	2785                	addiw	a5,a5,1
-    52010906:	fef42623          	sw	a5,-20(s0)
-    5201090a:	fec42703          	lw	a4,-20(s0)
-    5201090e:	fcc42783          	lw	a5,-52(s0)
-    52010912:	2701                	sext.w	a4,a4
-    52010914:	2781                	sext.w	a5,a5
-    52010916:	f8f74fe3          	blt	a4,a5,520108b4 <strncmp+0x1a>
-    5201091a:	4781                	li	a5,0
-    5201091c:	853e                	mv	a0,a5
-    5201091e:	7462                	ld	s0,56(sp)
-    52010920:	6121                	addi	sp,sp,64
-    52010922:	8082                	ret
+00000000520108c2 <strncmp>:
+    520108c2:	7139                	addi	sp,sp,-64
+    520108c4:	fc22                	sd	s0,56(sp)
+    520108c6:	0080                	addi	s0,sp,64
+    520108c8:	fca43c23          	sd	a0,-40(s0)
+    520108cc:	fcb43823          	sd	a1,-48(s0)
+    520108d0:	87b2                	mv	a5,a2
+    520108d2:	fcf42623          	sw	a5,-52(s0)
+    520108d6:	fe042623          	sw	zero,-20(s0)
+    520108da:	a8a1                	j	52010932 <strncmp+0x70>
+    520108dc:	fec42783          	lw	a5,-20(s0)
+    520108e0:	fd843703          	ld	a4,-40(s0)
+    520108e4:	97ba                	add	a5,a5,a4
+    520108e6:	0007c683          	lbu	a3,0(a5)
+    520108ea:	fec42783          	lw	a5,-20(s0)
+    520108ee:	fd043703          	ld	a4,-48(s0)
+    520108f2:	97ba                	add	a5,a5,a4
+    520108f4:	0007c783          	lbu	a5,0(a5)
+    520108f8:	8736                	mv	a4,a3
+    520108fa:	02f70763          	beq	a4,a5,52010928 <strncmp+0x66>
+    520108fe:	fec42783          	lw	a5,-20(s0)
+    52010902:	fd843703          	ld	a4,-40(s0)
+    52010906:	97ba                	add	a5,a5,a4
+    52010908:	0007c783          	lbu	a5,0(a5)
+    5201090c:	0007871b          	sext.w	a4,a5
+    52010910:	fec42783          	lw	a5,-20(s0)
+    52010914:	fd043683          	ld	a3,-48(s0)
+    52010918:	97b6                	add	a5,a5,a3
+    5201091a:	0007c783          	lbu	a5,0(a5)
+    5201091e:	2781                	sext.w	a5,a5
+    52010920:	40f707bb          	subw	a5,a4,a5
+    52010924:	2781                	sext.w	a5,a5
+    52010926:	a839                	j	52010944 <strncmp+0x82>
+    52010928:	fec42783          	lw	a5,-20(s0)
+    5201092c:	2785                	addiw	a5,a5,1
+    5201092e:	fef42623          	sw	a5,-20(s0)
+    52010932:	fec42703          	lw	a4,-20(s0)
+    52010936:	fcc42783          	lw	a5,-52(s0)
+    5201093a:	2701                	sext.w	a4,a4
+    5201093c:	2781                	sext.w	a5,a5
+    5201093e:	f8f74fe3          	blt	a4,a5,520108dc <strncmp+0x1a>
+    52010942:	4781                	li	a5,0
+    52010944:	853e                	mv	a0,a5
+    52010946:	7462                	ld	s0,56(sp)
+    52010948:	6121                	addi	sp,sp,64
+    5201094a:	8082                	ret
 
-0000000052010924 <strcpy>:
-    52010924:	7179                	addi	sp,sp,-48
-    52010926:	f422                	sd	s0,40(sp)
-    52010928:	1800                	addi	s0,sp,48
-    5201092a:	fca43c23          	sd	a0,-40(s0)
-    5201092e:	fcb43823          	sd	a1,-48(s0)
-    52010932:	fd843783          	ld	a5,-40(s0)
-    52010936:	fef43423          	sd	a5,-24(s0)
-    5201093a:	a00d                	j	5201095c <strcpy+0x38>
-    5201093c:	fd043703          	ld	a4,-48(s0)
-    52010940:	00170793          	addi	a5,a4,1
-    52010944:	fcf43823          	sd	a5,-48(s0)
-    52010948:	fd843783          	ld	a5,-40(s0)
-    5201094c:	00178693          	addi	a3,a5,1
-    52010950:	fcd43c23          	sd	a3,-40(s0)
-    52010954:	00074703          	lbu	a4,0(a4)
-    52010958:	00e78023          	sb	a4,0(a5)
-    5201095c:	fd043783          	ld	a5,-48(s0)
-    52010960:	0007c783          	lbu	a5,0(a5)
-    52010964:	ffe1                	bnez	a5,5201093c <strcpy+0x18>
-    52010966:	fd843783          	ld	a5,-40(s0)
-    5201096a:	00078023          	sb	zero,0(a5)
-    5201096e:	fe843783          	ld	a5,-24(s0)
-    52010972:	853e                	mv	a0,a5
-    52010974:	7422                	ld	s0,40(sp)
-    52010976:	6145                	addi	sp,sp,48
-    52010978:	8082                	ret
-
-000000005201097a <strncpy>:
-    5201097a:	7139                	addi	sp,sp,-64
-    5201097c:	fc22                	sd	s0,56(sp)
-    5201097e:	0080                	addi	s0,sp,64
-    52010980:	fca43c23          	sd	a0,-40(s0)
-    52010984:	fcb43823          	sd	a1,-48(s0)
-    52010988:	87b2                	mv	a5,a2
-    5201098a:	fcf42623          	sw	a5,-52(s0)
+000000005201094c <strcpy>:
+    5201094c:	7179                	addi	sp,sp,-48
+    5201094e:	f422                	sd	s0,40(sp)
+    52010950:	1800                	addi	s0,sp,48
+    52010952:	fca43c23          	sd	a0,-40(s0)
+    52010956:	fcb43823          	sd	a1,-48(s0)
+    5201095a:	fd843783          	ld	a5,-40(s0)
+    5201095e:	fef43423          	sd	a5,-24(s0)
+    52010962:	a00d                	j	52010984 <strcpy+0x38>
+    52010964:	fd043703          	ld	a4,-48(s0)
+    52010968:	00170793          	addi	a5,a4,1
+    5201096c:	fcf43823          	sd	a5,-48(s0)
+    52010970:	fd843783          	ld	a5,-40(s0)
+    52010974:	00178693          	addi	a3,a5,1
+    52010978:	fcd43c23          	sd	a3,-40(s0)
+    5201097c:	00074703          	lbu	a4,0(a4)
+    52010980:	00e78023          	sb	a4,0(a5)
+    52010984:	fd043783          	ld	a5,-48(s0)
+    52010988:	0007c783          	lbu	a5,0(a5)
+    5201098c:	ffe1                	bnez	a5,52010964 <strcpy+0x18>
     5201098e:	fd843783          	ld	a5,-40(s0)
-    52010992:	fef43423          	sd	a5,-24(s0)
-    52010996:	a00d                	j	520109b8 <strncpy+0x3e>
-    52010998:	fd043703          	ld	a4,-48(s0)
-    5201099c:	00170793          	addi	a5,a4,1
-    520109a0:	fcf43823          	sd	a5,-48(s0)
-    520109a4:	fd843783          	ld	a5,-40(s0)
-    520109a8:	00178693          	addi	a3,a5,1
-    520109ac:	fcd43c23          	sd	a3,-40(s0)
-    520109b0:	00074703          	lbu	a4,0(a4)
-    520109b4:	00e78023          	sb	a4,0(a5)
-    520109b8:	fd043783          	ld	a5,-48(s0)
-    520109bc:	0007c783          	lbu	a5,0(a5)
-    520109c0:	c395                	beqz	a5,520109e4 <strncpy+0x6a>
-    520109c2:	fcc42783          	lw	a5,-52(s0)
-    520109c6:	fff7871b          	addiw	a4,a5,-1
-    520109ca:	fce42623          	sw	a4,-52(s0)
-    520109ce:	fcf045e3          	bgtz	a5,52010998 <strncpy+0x1e>
-    520109d2:	a809                	j	520109e4 <strncpy+0x6a>
-    520109d4:	fd843783          	ld	a5,-40(s0)
-    520109d8:	00178713          	addi	a4,a5,1
-    520109dc:	fce43c23          	sd	a4,-40(s0)
-    520109e0:	00078023          	sb	zero,0(a5)
-    520109e4:	fcc42783          	lw	a5,-52(s0)
-    520109e8:	fff7871b          	addiw	a4,a5,-1
-    520109ec:	fce42623          	sw	a4,-52(s0)
-    520109f0:	fef042e3          	bgtz	a5,520109d4 <strncpy+0x5a>
-    520109f4:	fe843783          	ld	a5,-24(s0)
-    520109f8:	853e                	mv	a0,a5
-    520109fa:	7462                	ld	s0,56(sp)
-    520109fc:	6121                	addi	sp,sp,64
-    520109fe:	8082                	ret
+    52010992:	00078023          	sb	zero,0(a5)
+    52010996:	fe843783          	ld	a5,-24(s0)
+    5201099a:	853e                	mv	a0,a5
+    5201099c:	7422                	ld	s0,40(sp)
+    5201099e:	6145                	addi	sp,sp,48
+    520109a0:	8082                	ret
 
-0000000052010a00 <strcat>:
-    52010a00:	7179                	addi	sp,sp,-48
-    52010a02:	f422                	sd	s0,40(sp)
-    52010a04:	1800                	addi	s0,sp,48
-    52010a06:	fca43c23          	sd	a0,-40(s0)
-    52010a0a:	fcb43823          	sd	a1,-48(s0)
-    52010a0e:	fd843783          	ld	a5,-40(s0)
-    52010a12:	fef43423          	sd	a5,-24(s0)
-    52010a16:	a031                	j	52010a22 <strcat+0x22>
-    52010a18:	fd843783          	ld	a5,-40(s0)
-    52010a1c:	0785                	addi	a5,a5,1
-    52010a1e:	fcf43c23          	sd	a5,-40(s0)
-    52010a22:	fd843783          	ld	a5,-40(s0)
-    52010a26:	0007c783          	lbu	a5,0(a5)
-    52010a2a:	f7fd                	bnez	a5,52010a18 <strcat+0x18>
-    52010a2c:	a00d                	j	52010a4e <strcat+0x4e>
-    52010a2e:	fd043703          	ld	a4,-48(s0)
-    52010a32:	00170793          	addi	a5,a4,1
-    52010a36:	fcf43823          	sd	a5,-48(s0)
-    52010a3a:	fd843783          	ld	a5,-40(s0)
-    52010a3e:	00178693          	addi	a3,a5,1
-    52010a42:	fcd43c23          	sd	a3,-40(s0)
-    52010a46:	00074703          	lbu	a4,0(a4)
-    52010a4a:	00e78023          	sb	a4,0(a5)
-    52010a4e:	fd043783          	ld	a5,-48(s0)
-    52010a52:	0007c783          	lbu	a5,0(a5)
-    52010a56:	ffe1                	bnez	a5,52010a2e <strcat+0x2e>
-    52010a58:	fd843783          	ld	a5,-40(s0)
-    52010a5c:	00078023          	sb	zero,0(a5)
-    52010a60:	fe843783          	ld	a5,-24(s0)
-    52010a64:	853e                	mv	a0,a5
-    52010a66:	7422                	ld	s0,40(sp)
-    52010a68:	6145                	addi	sp,sp,48
-    52010a6a:	8082                	ret
+00000000520109a2 <strncpy>:
+    520109a2:	7139                	addi	sp,sp,-64
+    520109a4:	fc22                	sd	s0,56(sp)
+    520109a6:	0080                	addi	s0,sp,64
+    520109a8:	fca43c23          	sd	a0,-40(s0)
+    520109ac:	fcb43823          	sd	a1,-48(s0)
+    520109b0:	87b2                	mv	a5,a2
+    520109b2:	fcf42623          	sw	a5,-52(s0)
+    520109b6:	fd843783          	ld	a5,-40(s0)
+    520109ba:	fef43423          	sd	a5,-24(s0)
+    520109be:	a00d                	j	520109e0 <strncpy+0x3e>
+    520109c0:	fd043703          	ld	a4,-48(s0)
+    520109c4:	00170793          	addi	a5,a4,1
+    520109c8:	fcf43823          	sd	a5,-48(s0)
+    520109cc:	fd843783          	ld	a5,-40(s0)
+    520109d0:	00178693          	addi	a3,a5,1
+    520109d4:	fcd43c23          	sd	a3,-40(s0)
+    520109d8:	00074703          	lbu	a4,0(a4)
+    520109dc:	00e78023          	sb	a4,0(a5)
+    520109e0:	fd043783          	ld	a5,-48(s0)
+    520109e4:	0007c783          	lbu	a5,0(a5)
+    520109e8:	c395                	beqz	a5,52010a0c <strncpy+0x6a>
+    520109ea:	fcc42783          	lw	a5,-52(s0)
+    520109ee:	fff7871b          	addiw	a4,a5,-1
+    520109f2:	fce42623          	sw	a4,-52(s0)
+    520109f6:	fcf045e3          	bgtz	a5,520109c0 <strncpy+0x1e>
+    520109fa:	a809                	j	52010a0c <strncpy+0x6a>
+    520109fc:	fd843783          	ld	a5,-40(s0)
+    52010a00:	00178713          	addi	a4,a5,1
+    52010a04:	fce43c23          	sd	a4,-40(s0)
+    52010a08:	00078023          	sb	zero,0(a5)
+    52010a0c:	fcc42783          	lw	a5,-52(s0)
+    52010a10:	fff7871b          	addiw	a4,a5,-1
+    52010a14:	fce42623          	sw	a4,-52(s0)
+    52010a18:	fef042e3          	bgtz	a5,520109fc <strncpy+0x5a>
+    52010a1c:	fe843783          	ld	a5,-24(s0)
+    52010a20:	853e                	mv	a0,a5
+    52010a22:	7462                	ld	s0,56(sp)
+    52010a24:	6121                	addi	sp,sp,64
+    52010a26:	8082                	ret
+
+0000000052010a28 <strcat>:
+    52010a28:	7179                	addi	sp,sp,-48
+    52010a2a:	f422                	sd	s0,40(sp)
+    52010a2c:	1800                	addi	s0,sp,48
+    52010a2e:	fca43c23          	sd	a0,-40(s0)
+    52010a32:	fcb43823          	sd	a1,-48(s0)
+    52010a36:	fd843783          	ld	a5,-40(s0)
+    52010a3a:	fef43423          	sd	a5,-24(s0)
+    52010a3e:	a031                	j	52010a4a <strcat+0x22>
+    52010a40:	fd843783          	ld	a5,-40(s0)
+    52010a44:	0785                	addi	a5,a5,1
+    52010a46:	fcf43c23          	sd	a5,-40(s0)
+    52010a4a:	fd843783          	ld	a5,-40(s0)
+    52010a4e:	0007c783          	lbu	a5,0(a5)
+    52010a52:	f7fd                	bnez	a5,52010a40 <strcat+0x18>
+    52010a54:	a00d                	j	52010a76 <strcat+0x4e>
+    52010a56:	fd043703          	ld	a4,-48(s0)
+    52010a5a:	00170793          	addi	a5,a4,1
+    52010a5e:	fcf43823          	sd	a5,-48(s0)
+    52010a62:	fd843783          	ld	a5,-40(s0)
+    52010a66:	00178693          	addi	a3,a5,1
+    52010a6a:	fcd43c23          	sd	a3,-40(s0)
+    52010a6e:	00074703          	lbu	a4,0(a4)
+    52010a72:	00e78023          	sb	a4,0(a5)
+    52010a76:	fd043783          	ld	a5,-48(s0)
+    52010a7a:	0007c783          	lbu	a5,0(a5)
+    52010a7e:	ffe1                	bnez	a5,52010a56 <strcat+0x2e>
+    52010a80:	fd843783          	ld	a5,-40(s0)
+    52010a84:	00078023          	sb	zero,0(a5)
+    52010a88:	fe843783          	ld	a5,-24(s0)
+    52010a8c:	853e                	mv	a0,a5
+    52010a8e:	7422                	ld	s0,40(sp)
+    52010a90:	6145                	addi	sp,sp,48
+    52010a92:	8082                	ret
